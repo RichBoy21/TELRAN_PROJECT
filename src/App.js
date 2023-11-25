@@ -20,9 +20,8 @@ function App() {
           <Route path="/sales" element={<Sales />} />
         </Routes>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
+      <Footer />
     </div>
   );
 }

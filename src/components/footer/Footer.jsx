@@ -6,7 +6,7 @@ import FooterMap from "./footerMap/FooterMap";
 function Footer() {
   return (
     <div>
-      <h1 className={styles.footerTitle}>Contact</h1>
+      <h2 className={styles.footerTitle}>Contact</h2>
       <div className={styles.footerContainer}>
         <div className={styles.footerPhone}>
           <span>Phone</span>

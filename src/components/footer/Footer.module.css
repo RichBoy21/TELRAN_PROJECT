@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 59% auto;
     grid-template-rows: 150px;
+
     gap: 32px;
 
     grid-template-areas:
@@ -12,7 +13,7 @@
 }
 
 .footerTitle {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
