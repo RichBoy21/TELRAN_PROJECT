@@ -1,0 +1,29 @@
+.mainLinkButton {
+    color: #8B8B8B;
+    padding: 8px 16px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 126%;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    width: 142px;
+    height: 36px;
+}
+
+.mainLinkBtn {
+    color: red;
+    padding: 8px 16px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 126%;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    width: 142px;
+    height: 36px;
+}

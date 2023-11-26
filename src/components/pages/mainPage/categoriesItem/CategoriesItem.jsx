@@ -16,7 +16,6 @@ function CategoriesItem({ categories, status, error }) {
         slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
-        marginBottom={30}
         pagination={{
           clickable: true,
         }}

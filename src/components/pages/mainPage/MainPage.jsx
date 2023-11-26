@@ -4,6 +4,9 @@ import styles from "./MainPage.module.css";
 import { getCategories } from "../../store/slices/categoriesSlice";
 import CategoriesItem from "./categoriesItem/CategoriesItem";
 
+import LinkButton from "../../ui/LinkButton/LinkButton";
+import DiscountForm from "./discountForm/DiscountForm";
+
 function MainPage({ image }) {
   const dispatch = useDispatch();
   const { status, categories, error } = useSelector(
@@ -22,6 +25,7 @@ function MainPage({ image }) {
             Amazing Discounts
             <br /> on Garden Products!
           </h1>
+
           <button className={styles.btnCheckOut}>Check out</button>
         </div>
       </div>
@@ -30,10 +34,15 @@ function MainPage({ image }) {
         <div className={styles.categoriesTitle}>
           <h2>Categories</h2>
           <hr />
-          <button>All categories</button>
+          <LinkButton
+            path={"/categories"}
+            title={"All categories"}
+            className={"mainLinkButton"}
+          />
         </div>
         <CategoriesItem categories={categories} status={status} error={error} />
       </div>
+      <DiscountForm />
     </div>
   );
 }

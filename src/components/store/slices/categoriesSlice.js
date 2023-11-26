@@ -19,6 +19,17 @@ export const getCategories = createAsyncThunk(
   }
 );
 
+export const sendDiscount = (data) => {
+  try {
+    fetch("http://localhost:3333/sale/send ", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const categoriesSlice = createSlice({
   name: "categories",
   initialState,
