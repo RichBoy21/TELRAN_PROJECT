@@ -11,19 +11,24 @@
     border: 1px solid #DDD;
     width: 142px;
     height: 36px;
+    cursor: pointer;
 }
 
-.mainLinkBtn {
-    color: red;
-    padding: 8px 16px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 126%;
+
+
+.errorLinkBtn {
+    display: flex;
+    padding: 16px 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #393;
+    color: #FFF;
     border-radius: 6px;
-    border: 1px solid #DDD;
-    width: 142px;
-    height: 36px;
+    border: none;
+    cursor: pointer;
+}
+
+.linkBtn {
+    text-decoration: none;
 }

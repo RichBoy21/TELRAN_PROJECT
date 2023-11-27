@@ -19,18 +19,6 @@ h1 {
     padding: 80px 40px 308px;
 }
 
-.btnCheckOut {
-    display: flex;
-    padding: 16px 56px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: #393;
-    color: #FFF;
-    border-radius: 6px;
-    border: none;
-}
-
 .categoriesTitle {
     display: flex;
     justify-content: space-between;

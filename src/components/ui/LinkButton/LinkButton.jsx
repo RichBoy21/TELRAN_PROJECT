@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function LinkButton({ path, title, className }) {
   return (
-    <Link to={path}>
+    <Link to={path} className={styles.linkBtn}>
       <button className={styles[className]}>{title}</button>
     </Link>
   );

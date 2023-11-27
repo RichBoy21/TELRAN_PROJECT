@@ -6,6 +6,7 @@ import CategoriesItem from "./categoriesItem/CategoriesItem";
 
 import LinkButton from "../../ui/LinkButton/LinkButton";
 import DiscountForm from "./discountForm/DiscountForm";
+import Button from "../../ui/Button/Button";
 
 function MainPage({ image }) {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function MainPage({ image }) {
             <br /> on Garden Products!
           </h1>
 
-          <button className={styles.btnCheckOut}>Check out</button>
+          <Button title={"Check out"} className={"btnCheckOut"} />
         </div>
       </div>
 
