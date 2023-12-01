@@ -1,0 +1,9 @@
+.btnCheckOut {
+    padding: 16px 56px;
+    background-color: #393;
+    color: #FFF;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}

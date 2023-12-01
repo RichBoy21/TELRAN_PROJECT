@@ -7,9 +7,13 @@ import CategoriesItem from "./categoriesItem/CategoriesItem";
 import LinkButton from "../../ui/LinkButton/LinkButton";
 import DiscountForm from "./discountForm/DiscountForm";
 import Button from "../../ui/Button/Button";
+import Sale from "./sale/Sale";
+import { Link, useNavigate } from "react-router-dom";
+import AnchorButton from "../../ui/AnchorButton/AnchorButton";
 
 function MainPage({ image }) {
   const dispatch = useDispatch();
+
   const { status, categories, error } = useSelector(
     (state) => state.categories
   );
@@ -26,11 +30,13 @@ function MainPage({ image }) {
             Amazing Discounts
             <br /> on Garden Products!
           </h1>
-
-          <Button title={"Check out"} className={"btnCheckOut"} />
+          <AnchorButton
+            path={"#sale"}
+            title={"Check out"}
+            className={"btnCheckOut"}
+          />
         </div>
       </div>
-
       <div className={styles.categoriesContainer}>
         <div className={styles.categoriesTitle}>
           <h2>Categories</h2>
@@ -43,7 +49,10 @@ function MainPage({ image }) {
         </div>
         <CategoriesItem categories={categories} status={status} error={error} />
       </div>
-      <DiscountForm />
+      <div id="sale">
+        <DiscountForm />
+      </div>
+      <Sale />
     </div>
   );
 }

@@ -1,0 +1,41 @@
+.discountContainer {
+    background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+    border-radius: 12px;
+}
+
+.discountTitle {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    padding: 32px 32px 24px;
+}
+
+.dicsountContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 0px 32px 0px;
+}
+
+.discountForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.discountForm input {
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.discountForm input::placeholder {
+    color: #FFF;
+}

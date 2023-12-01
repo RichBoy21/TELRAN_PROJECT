@@ -7,7 +7,7 @@ import error from "../../../assets/images/error.svg";
 function ErrorPage() {
   return (
     <section>
-      <Header />
+      
       <div className={styles.errorContainer}>
         <img src={error} className={styles.errorImg} />
         <h2 className={styles.errorTitle}>Page Not Found</h2>
@@ -19,7 +19,7 @@ function ErrorPage() {
           <LinkButton path={"/"} title={"Go Home"} className={"errorLinkBtn"} />
         </span>
       </div>
-      <Footer />
+    
     </section>
   );
 }
