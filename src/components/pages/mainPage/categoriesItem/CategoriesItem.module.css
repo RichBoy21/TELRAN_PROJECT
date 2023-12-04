@@ -1,0 +1,42 @@
+.CategoriesItemContainer {
+    height: 100%;
+    position: relative;
+    height: 100%;
+    margin-bottom: 80px;
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.categoryInfo {
+    color: #282828;
+    position: absolute;
+    left: 200px;
+    bottom: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoriesImg {
+    width: 459px;
+    height: 300px;
+    margin: 0px 30px 70px 0px;
+    border-radius: 10px;
+}

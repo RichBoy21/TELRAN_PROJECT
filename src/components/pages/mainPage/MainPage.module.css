@@ -1,0 +1,44 @@
+h1 {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    margin-bottom: 40px;
+}
+
+.mainGardenProducts {
+    background-image: url(../../../assets/images/main_img.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.guideContent {
+    padding: 80px 40px 308px;
+}
+
+.categoriesTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 40px 40px;
+}
+
+.categoriesTitle h2 {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    margin-right: 32px;
+}
+
+.categoriesTitle hr {
+    height: 1px;
+    margin: auto 0px;
+    border: 1px solid #DDDDDD;
+    text-align: center;
+}

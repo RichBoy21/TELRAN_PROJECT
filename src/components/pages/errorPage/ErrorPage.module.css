@@ -1,0 +1,35 @@
+.errorContainer {
+    margin: 80px auto;
+    text-align: center;
+}
+
+.errorImg {
+    margin-bottom: 32px;
+}
+
+.errorTitle {
+    color: #282828;
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%
+}
+
+.errorText {
+    color: #8B8B8B;
+    margin-bottom: 32px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.linkBtnError {
+    display: flex;
+    justify-content: center;
+}
