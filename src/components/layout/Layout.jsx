@@ -3,19 +3,19 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { FloatButton } from "antd";
 import styles from "./Layout.module.css";
+import ScrollToTop from "./../scrollToTop/ScrollToTop";
 
 const Loyout = () => {
   return (
     <>
       <div className="App">
+      <ScrollToTop />
         <Header />
         <main>
           <Outlet />
         </main>
         <Footer />
-        <div className={styles.flouatBtn}>
           <FloatButton.BackTop className={styles.btn} />
-        </div>
       </div>
     </>
   );

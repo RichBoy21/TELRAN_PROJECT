@@ -1,0 +1,45 @@
+.container{
+    padding: 0px 40px;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.container h2 {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    margin-bottom: 40px;
+}
+
+.cardContainer {
+    max-width: 300px;
+}
+
+.cardContainer img {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.cardContainer p {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+.links{
+    text-decoration: none;
+}

@@ -3,10 +3,10 @@ import LinkButton from "../../../ui/LinkButton/LinkButton";
 import styles from "./Sale.module.css";
 
 import { useEffect } from "react";
-import { getProducts } from "../../../store/slices/productsSlice";
+import { getProducts } from "../../../../store/slices/productsSlice";
 import SaleItem from "./saleItem/SaleItem";
 
-const Sale = ({image}) => {
+const Sale = ({ image }) => {
   const { status, error, products } = useSelector((state) => state.products);
 
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Sale = ({image}) => {
   useEffect(() => {
     dispatch(getProducts(image));
   }, [dispatch, image]);
- 
+
   return (
     <div>
       <div className={styles.saleTitle}>
@@ -26,7 +26,7 @@ const Sale = ({image}) => {
           className={"saleLinkButton"}
         />
       </div>
-      <SaleItem products={products} status={status} error={error}/>
+      <SaleItem products={products} status={status} error={error} />
     </div>
   );
 };

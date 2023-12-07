@@ -21,21 +21,3 @@
     padding: 0px 32px 0px;
 }
 
-.discountForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 16px;
-    margin-top: 32px;
-}
-
-.discountForm input {
-    padding: 16px 32px;
-    border-radius: 6px;
-    border: 1px solid #FFF;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.discountForm input::placeholder {
-    color: #FFF;
-}

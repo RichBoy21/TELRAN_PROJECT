@@ -1,0 +1,15 @@
+.errorMessage {
+    color: #d9534f;
+    background-color: #f2dede; 
+    border: 1px solid #d9534f; 
+    padding: 8px;
+    border-radius: 4px; 
+    margin-top: 5px;
+    font-size: 14px; 
+  }
+  
+
+  .errorMessage:before {
+    content: "⚠ "; 
+    font-weight: bold;
+  }

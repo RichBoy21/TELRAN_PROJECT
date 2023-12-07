@@ -1,0 +1,18 @@
+.swiper-slide {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mySwiper {
+    right: var(--swiper-navigation-sides-offset, 42px);
+    left: auto;
+
+
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 15px);
+    right: auto;
+}

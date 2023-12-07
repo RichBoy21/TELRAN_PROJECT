@@ -1,5 +1,6 @@
 import styles from "./SaleItem.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import './styles.css'
 
 import "swiper/css";
 import "swiper/css/navigation";

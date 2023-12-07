@@ -1,25 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./MainPage.module.css";
-import { getCategories } from "../../store/slices/categoriesSlice";
+import { getCategoriesAll } from "./../../../store/slices/categoriesSlice";
 import CategoriesItem from "./categoriesItem/CategoriesItem";
 
 import LinkButton from "../../ui/LinkButton/LinkButton";
-import DiscountForm from "./discountForm/DiscountForm";
 import Sale from "./sale/Sale";
 import AnchorButton from "../../ui/AnchorButton/AnchorButton";
+import DiscountSection from "./discountSection/DiscountSection";
 
 function MainPage() {
   const dispatch = useDispatch();
 
-  const { status, categories, error } = useSelector(
+  const { status, categoriesAll, error } = useSelector(
     (state) => state.categories
   );
 
   useEffect(() => {
-    dispatch(getCategories('all'));
+    dispatch(getCategoriesAll());
   }, [dispatch]);
-
+ 
   return (
     <div className={styles.mainPageContainer}>
       <div className={styles.mainGardenProducts}>
@@ -45,10 +45,10 @@ function MainPage() {
             className={"mainLinkButton"}
           />
         </div>
-        <CategoriesItem categories={categories} status={status} error={error} />
+        <CategoriesItem categories={categoriesAll} status={status} error={error} />
       </div>
       <div id="sale">
-        <DiscountForm />
+        <DiscountSection />
       </div>
       <Sale />
     </div>

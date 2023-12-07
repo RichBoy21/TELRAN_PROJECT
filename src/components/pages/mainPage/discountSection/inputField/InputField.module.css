@@ -1,0 +1,11 @@
+.inputsDiscount {
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.inputsDiscount::placeholder {
+    color: #FFF;
+}

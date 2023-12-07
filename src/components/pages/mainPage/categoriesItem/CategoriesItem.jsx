@@ -22,7 +22,7 @@ function CategoriesItem({ categories, status, error }) {
         modules={[FreeMode, Pagination]}
         className={styles.mySwiper}
       >
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <SwiperSlide key={category.id}>
             <img
               className={styles.categoriesImg}

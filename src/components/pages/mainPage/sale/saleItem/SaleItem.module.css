@@ -47,11 +47,11 @@ body {
 .productsItemContainer {
     height: 100%;
     height: 100%;
-    margin: 0px -80px 80px 0px;
+    margin: 0px -20px 80px 60px;
 }
 
 .productsContainer {
-    max-width: 300px;
+    max-width: 316px;
     border-radius: 12px;
     border: 1px solid #DDD;
 }
@@ -61,17 +61,13 @@ body {
 }
 
 .productDiscount img {
-    width: 300px;
+    width: 316px;
     height: 300px;
     margin-bottom: 20px;
     border-radius: 12px 12px 0 0;
 }
 
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-    right: var(--swiper-navigation-sides-offset, 80px);
-    left: auto;
-}
+
 
 .productDiscount p {
     position: absolute;
@@ -131,11 +127,3 @@ body {
     font-weight: 600;
     line-height: 110%;
 }
-
-
-
-
-
-
-
-
