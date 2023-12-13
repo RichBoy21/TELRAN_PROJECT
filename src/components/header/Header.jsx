@@ -1,36 +1,38 @@
 import logo from "../../assets/images/logo.svg";
 import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const getColorActive = ({ isActive }) => {return isActive ? `${styles.active} ${styles.link} `: styles.link};
+
+
+const getColorActive = ({ isActive }) => { return isActive ? `${styles.active} ${styles.link} ` : styles.link };
 
 function Header() {
   return (
     <>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <NavLink to="/" className={getColorActive }>
+          <NavLink to="/" >
             <img src={logo} />
           </NavLink>
         </div>
         <ul className={styles.navBar}>
-          <NavLink to="/" className={getColorActive }>
+          <NavLink to="/" className={getColorActive}>
             Main Page
           </NavLink>
-          <NavLink to="/categories" className={getColorActive }>
+          <NavLink to="/categories" className={getColorActive}>
             Categories
           </NavLink>
-          <NavLink to="/products" className={getColorActive }>
+          <NavLink to="/products" className={getColorActive}>
             All products
           </NavLink>
-          <NavLink to="/sales" className={getColorActive }>
+          <NavLink to="/sales" className={getColorActive}>
             All sales
           </NavLink>
         </ul>
-        <div className={styles.basket}>
+        <NavLink to='/basket' className={styles.basket}>
           <img src={basket} />
-        </div>
+        </NavLink>
       </header>
       <hr />
     </>

@@ -6,14 +6,14 @@ import { useEffect } from "react";
 import { getProducts } from "../../../../store/slices/productsSlice";
 import SaleItem from "./saleItem/SaleItem";
 
-const Sale = ({ image }) => {
-  const { status, error, products } = useSelector((state) => state.products);
+const Sale = () => {
+  const { status, error, productsAll } = useSelector((state) => state.products);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProducts(image));
-  }, [dispatch, image]);
+    dispatch(getProducts());
+  }, [dispatch]);
 
   return (
     <div>
@@ -26,7 +26,7 @@ const Sale = ({ image }) => {
           className={"saleLinkButton"}
         />
       </div>
-      <SaleItem products={products} status={status} error={error} />
+      <SaleItem products={productsAll} status={status} error={error} />
     </div>
   );
 };

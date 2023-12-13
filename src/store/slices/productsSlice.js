@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: [],
+  productsAll: [],
   status: null,
   error: null,
 };
@@ -30,7 +30,7 @@ export const productsSlice = createSlice({
       })
       .addCase(getProducts.fulfilled, (state, action) => {
         state.status = "fulfilled";
-        state.products = action.payload;
+        state.productsAll = action.payload;
       })
       .addCase(getProducts.rejected, (state, action) => {
         state.status = "rejected";

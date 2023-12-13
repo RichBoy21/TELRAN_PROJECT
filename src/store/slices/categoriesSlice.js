@@ -34,6 +34,7 @@ const categoriesSlice = createSlice({
     categoriesAll: [],
     productsByCategoryId: [],
     status: "idle",
+    statusProductsByCategoryId: "idle",
     error: null,
   },
   reducers: {},
@@ -52,14 +53,14 @@ const categoriesSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(getProductsByCategoryId.pending, (state) => {
-        state.status = "loading";
+        state.statusProductsByCategoryId = "loading";
       })
       .addCase(getProductsByCategoryId.fulfilled, (state, action) => {
-        state.status = "fulfilled";
+        state.statusProductsByCategoryId= "fulfilled";
         state.productsByCategoryId = action.payload;
       })
       .addCase(getProductsByCategoryId.rejected, (state, action) => {
-        state.status = "rejected";
+        state.statusProductsByCategoryId = "rejected";
         state.error = action.error.message;
       });
   },
