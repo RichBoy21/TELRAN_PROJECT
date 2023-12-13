@@ -20,7 +20,7 @@
     color: #282828;
 }
 
-hr {
+.headerLine {
     width: 100%;
     height: 1px;
     border: 1px solid #DDDDDD;

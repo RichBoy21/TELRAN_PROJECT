@@ -34,7 +34,7 @@ function Header() {
           <img src={basket} />
         </NavLink>
       </header>
-      <hr />
+      <hr className={styles.headerLine}/>
     </>
   );
 }

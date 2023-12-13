@@ -4,8 +4,11 @@ import styles from './Products.module.css'
 
 function Products() {
   return <div>
-    <LinkButton path={"/"} title={'Main page'} />
-    <LinkButton path={"/products"} title={'All products'} />
+    <div className={styles.productsBtns}>
+      <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} />
+      <hr />
+      <LinkButton path={"/products"} title={'All products'} className={'historyBtn'} />
+    </div>
     <ProductsItem />
   </div>;
 }

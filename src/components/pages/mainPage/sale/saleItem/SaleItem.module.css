@@ -1,8 +1,11 @@
+.productsItemContainer{
+    margin-bottom: 80px;
+}
 .productsContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
-    margin-bottom: 80px;
+    
     padding: 0px 40px;
 }
 

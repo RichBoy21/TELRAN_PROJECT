@@ -27,11 +27,17 @@ const ProductsByCategoryId = () => {
 
   return (
     <>
+      <div className={styles.productsBtns}>
+        <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} />
+        <hr />
+        <LinkButton path={"/categories"} title={'Categories'} className={'historyBtn'} />
+        <hr />
+        {category && <LinkButton title={category.title} className={'historyBtn'} />}
+      </div>
 
 
-      <LinkButton path={"/"} title={'Main page'} />
-      <LinkButton path={"/categories"} title={'Categories'} />
-      {category && <LinkButton title={category.title} />}
+
+
 
 
       {statusProductsByCategoryId === "fulfilled" &&

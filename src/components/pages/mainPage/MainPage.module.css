@@ -37,8 +37,10 @@ h1 {
 }
 
 .categoriesTitle hr {
-    height: 1px;
-    margin: auto 0px;
-    border: 1px solid #DDDDDD;
-    text-align: center;
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    margin: 19px 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
