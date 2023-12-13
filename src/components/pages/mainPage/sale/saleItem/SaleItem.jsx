@@ -6,11 +6,21 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
+import { renderProductsDiscountCards } from "../../../../../utils/renderCardsProducts";
+import { getProducts } from "../../../../../store/slices/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
-function SaleItem({ products, status, error }) {
+function SaleItem() {
 
+  const { status, error, productsAll } = useSelector((state) => state.products);
 
-  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
   return (
     <div className={styles.productsItemContainer}>
       {error && <h2>Error ....</h2>}
@@ -21,35 +31,13 @@ function SaleItem({ products, status, error }) {
         className="mySwiper"
         slidesPerView={4}
       >
-        {products.filter((product) => product.discont_price !== null)
-          .map((product) => {
-            const percentDiscount = Math.floor(
-              100 - (product.discont_price * 100) / product.price
-            );
-
-            return (
-              <SwiperSlide key={product.id}>
-                <div className={styles.productsContainer}>
-                  <div className={styles.productDiscount}>
-                    <p>-{percentDiscount}%</p>
-                    <img
-                      src={`http://localhost:3333${product.image}`}
-                      alt={product.title}
-                    />
-                  </div>
-                  <p className={styles.productInfo}>{product.title}</p>
-                  <div className={styles.priceContainer}>
-                    <p className={styles.productDiscontPrice}>{`${"$"}${
-                      product.discont_price
-                    }`}</p>
-                    <p className={styles.productPrice}>{`${"$"}${
-                      product.price
-                    }`}</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
+        {productsAll
+          .filter((product) => product.discont_price !== null)
+          .map((product) => (
+            <SwiperSlide key={product.id}>
+              {renderProductsDiscountCards(product, styles)}
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

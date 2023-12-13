@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import styles from "./ProductsByCategoriesIdPage.module.css";
 import { getCategoriesAll, getProductsByCategoryId } from "../../../../store/slices/categoriesSlice";
 import LinkButton from "../../../ui/LinkButton/LinkButton";
+import { renderProductsCards, renderProductsDiscountCards } from "../../../../utils/renderCardsProducts";
 
 
 const ProductsByCategoryId = () => {
@@ -30,7 +31,7 @@ const ProductsByCategoryId = () => {
 
       <LinkButton path={"/"} title={'Main page'} />
       <LinkButton path={"/categories"} title={'Categories'} />
-     {category && <LinkButton title={category.title} />}
+      {category && <LinkButton title={category.title} />}
 
 
       {statusProductsByCategoryId === "fulfilled" &&
@@ -41,51 +42,13 @@ const ProductsByCategoryId = () => {
         {statusProductsByCategoryId === "loading" && <h2>Loading....</h2>}
         {statusProductsByCategoryId === "fulfilled" &&
 
-          data.map((product) => {
+          data.map((product) =>
+            product.discont_price
 
-            if (product.discont_price) {
-              const percentDiscount = Math.floor(
-                100 - (product.discont_price * 100) / product.price
-
-              );
-
-              return (
-
-                <div key={product.id}>
-
-                  <div className={styles.productsCardsContainer}>
-                    <div className={styles.productDiscount}>
-                      <p>-{percentDiscount}%</p>
-                      <img src={`http://localhost:3333${product.image}`} alt={product.title} />
-                    </div>
-                    <p className={styles.productInfo}>{product.title}</p>
-                    <div className={styles.priceContainer}>
-                      <p className={styles.productDiscontPrice}>{`${"$"}${product.discont_price}`}</p>
-                      <p className={styles.productPrice}>{`${"$"}${product.price}`}</p>
-                    </div>
-                  </div>
-                </div>
-
-              );
-            }
-
-
-            return (
-
-              <div key={product.id} >
-                <div className={styles.productsCardsContainer}>
-                  <div className={styles.productDiscount}>
-                    <img src={`http://localhost:3333${product.image}`} alt={product.title} />
-                  </div>
-                  <p className={styles.productInfo}>{product.title}</p>
-                  <div className={styles.priceContainer}>
-                    <p className={styles.productDiscontPrice}>{`${"$"}${product.price}`}</p>
-                  </div>
-                </div>
-              </div>
-
-            );
-          })}
+              ? renderProductsDiscountCards(product, styles)
+              : renderProductsCards(product, styles)
+          )
+        }
       </div>
     </>
   );

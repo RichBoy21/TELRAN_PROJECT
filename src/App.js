@@ -4,7 +4,7 @@ import "./App.css";
 import MainPage from "./components/pages/mainPage/MainPage";
 import Categories from "./components/pages/categories/CategoriesAllPage";
 import Products from "./components/pages/products/Products";
-import Sales from "./components/pages/sales/Sales";
+import Sales from "./components/pages/sales/SalesPage";
 import ErrorPage from "./components/pages/errorPage/ErrorPage";
 import Loyout from "./components/layout/Layout";
 import ProductsPage from "./components/pages/categories/productsPage/ProductsByCategoriesIdPage";
