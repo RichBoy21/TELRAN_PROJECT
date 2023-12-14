@@ -9,12 +9,12 @@ const ProductsItem = () => {
     const dispatch = useDispatch()
     const { status, error, productsAll } = useSelector((state) => state.products)
 
+
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);
 
-    return <>
-
+    return <article>
 
         <h2 className={styles.allProducts}>All products</h2>
         <div className={styles.productsContainer}>
@@ -22,13 +22,12 @@ const ProductsItem = () => {
             {status === "loading" && <h2>Loading....</h2>}
             {status === "fulfilled" && productsAll.map((product) =>
                 product.discont_price
-
                     ? renderProductsDiscountCards(product, styles)
                     : renderProductsCards(product, styles)
             )}
-
         </div>
-    </>
+
+    </article>
 }
 
 export default ProductsItem;

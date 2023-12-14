@@ -15,12 +15,15 @@ const CategoriesAllPage = () => {
     dispatch(getCategoriesAll());
   }, [dispatch]);
 
+
+  
+
   return (
     <>
 
 
       <div className={styles.productsBtns}>
-        <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} />
+        <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} onCl/>
         <hr />
         <LinkButton path={"/categories"} title={'Categories'} className={'historyBtn'} />
       </div>

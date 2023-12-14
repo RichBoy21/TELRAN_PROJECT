@@ -15,8 +15,6 @@ const ProductsByCategoryId = () => {
 
 
 
-
-
   useEffect(() => {
     dispatch(getCategoriesAll());
   }, [dispatch]);
@@ -47,13 +45,13 @@ const ProductsByCategoryId = () => {
         {error && <h2>Error: {error}</h2>}
         {statusProductsByCategoryId === "loading" && <h2>Loading....</h2>}
         {statusProductsByCategoryId === "fulfilled" &&
-
-          data.map((product) =>
-            product.discont_price
-
-              ? renderProductsDiscountCards(product, styles)
-              : renderProductsCards(product, styles)
-          )
+          data.map((product) => (
+            <Link className={styles.productLink} key={product.id} to={`/products/${product.id}`}>
+              {product.discont_price
+                ? renderProductsDiscountCards(product, styles)
+                : renderProductsCards(product, styles)}
+            </Link>
+          ))
         }
       </div>
     </>

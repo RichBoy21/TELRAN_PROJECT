@@ -37,7 +37,6 @@ export const salesSlice = createSlice({
       })
       .addCase(submitSalesData.fulfilled, (state) => {
         state.status = "succeeded";
-        // state.isModalOpen = true;
       })
       .addCase(submitSalesData.rejected, (state, action) => {
         state.status = "failed";

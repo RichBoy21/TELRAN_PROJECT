@@ -9,6 +9,8 @@ import ErrorPage from "./components/pages/errorPage/ErrorPage";
 import Loyout from "./components/layout/Layout";
 import ProductsPage from "./components/pages/categories/productsPage/ProductsByCategoriesIdPage";
 import BasketPage from "./components/pages/basketPage/BasketPage";
+import SingleProductPage from "./components/pages/singleProduct/SingleProductPage";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="categories/:id" element={<ProductsPage />} />
           <Route path="basket" element={<BasketPage />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<SingleProductPage />} />
           <Route path="sales" element={<Sales />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
