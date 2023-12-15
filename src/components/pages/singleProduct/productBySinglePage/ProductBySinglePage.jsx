@@ -17,7 +17,7 @@ const ProductBySinglePage = () => {
     const product = useSelector((state) =>
         state.products.productsAll.find((p) => p.id === Number(id))
     );
-    const { statusProductsByCategoryId, productsByCategoryId: {  category }} = useSelector((state) => state.categories);
+    const {  productsByCategoryId: {  category }} = useSelector((state) => state.categories);
 
 
 

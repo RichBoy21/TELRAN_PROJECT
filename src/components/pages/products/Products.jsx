@@ -1,6 +1,7 @@
 import LinkButton from "../../ui/LinkButton/LinkButton";
 import ProductsItem from "./productsItem/ProductsItem";
 import styles from './Products.module.css'
+import FiltersContainer from "../../filter/Filters";
 
 function Products() {
   return <div>

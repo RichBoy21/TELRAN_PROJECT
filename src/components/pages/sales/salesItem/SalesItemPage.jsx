@@ -3,10 +3,10 @@ import styles from './SalesItemPage.module.css';
 import { useEffect } from 'react';
 import { getProducts } from '../../../../store/slices/productsSlice';
 import { renderProductsDiscountCards } from '../../../../utils/renderCardsProducts';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SalesItemPage = () => {
-    const navigate = useNavigate();
+   
     const dispatch = useDispatch();
     const { status, error, productsAll } = useSelector((state) => state.products);
 
