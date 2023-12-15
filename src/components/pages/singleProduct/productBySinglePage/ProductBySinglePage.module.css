@@ -1,0 +1,122 @@
+.singleProductContainer {
+    margin-bottom: 82px;
+    padding: 0px 40px;
+    display: flex;
+    gap: 32px;
+}
+
+.singlePrice {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.singleImg {
+    border-radius: 12px;
+    width: 780px;
+    height: 512px;
+}
+
+.singleCount {
+    margin-bottom: 32px;
+}
+
+h3 {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 16px;
+}
+
+.productsCardsContainer {
+    display: flex;
+}
+
+.productDiscount p {
+    color: #FFF;
+    right: 16px;
+    top: 16px;
+    background-color: #393;
+    padding: 4px 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    border-radius: 6px;
+}
+
+.productInfo {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 1.2px;
+    margin-bottom: 32px;
+}
+
+.priceContainer {
+    display: flex;
+    gap: 16px;
+}
+
+
+
+.productPrice {
+    color: #8B8B8B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration-line: line-through;
+    padding-top: 16px;
+    margin-right: 16px;
+    font-size: 40px;
+    font-style: normal;
+}
+
+.productDiscontPrice {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    line-height: 110%;
+    margin-right: 32px;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.productTitle {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    margin-bottom: 40px;
+    padding: 0px 40px;
+}
+
+
+.productsBtns {
+    display: flex;
+    padding: 0px 40px;
+    margin-bottom: 40px;
+}
+
+.productsBtns hr {
+    border-bottom: 1px solid #DDDDDD;
+    width: 16px;
+    margin: 19px 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.productLink {
+    text-decoration: none;
+}
