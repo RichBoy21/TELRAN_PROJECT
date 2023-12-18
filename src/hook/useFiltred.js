@@ -31,10 +31,10 @@ export const useFiltred = (items) => {
         return product.price <= to;
       })
       .sort((a, b) => {
-        if (selectedOption === "high") {
-          return a.price - b.price;
-        } else if (selectedOption === "low") {
+        if (selectedOption === "price: high-low") {
           return b.price - a.price;
+        } else if (selectedOption === "price: low-high") {
+          return a.price - b.price;
         }
       });
   };
@@ -58,10 +58,14 @@ export const useFiltred = (items) => {
     setIsDiscounted(value);
   };
 
-  const handleSelectChange = (e) => {
-    const selectedValue = e.target.value;
-    setSelectedOption(selectedValue);
+  const handleSelectChange = (selectedOption) => {
+    setSelectedOption(selectedOption.value);
   };
+
+  // const handleSelectChange = (e) => {
+  //   const selectedValue = e.target.value;
+  //   setSelectedOption(selectedValue);
+  // };
 
   return {
     getFiltredItems,
