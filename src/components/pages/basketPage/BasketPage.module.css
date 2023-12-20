@@ -1,0 +1,30 @@
+.basketContainer {
+    padding: 0px 40px;
+}
+.basketTitleBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+}
+.basketTitleBtn h2{
+    margin-right: 32px;
+    white-space: nowrap;
+}
+.shoppingCart {
+    color: #282828;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+
+.basketTitleBtn hr {
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    margin: 19px 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
