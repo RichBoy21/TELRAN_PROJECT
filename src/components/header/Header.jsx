@@ -2,12 +2,16 @@ import logo from "../../assets/images/logo.svg";
 import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 
 const getColorActive = ({ isActive }) => { return isActive ? `${styles.active} ${styles.link} ` : styles.link };
 
 function Header() {
+  const { basketItems } = useSelector(state => state.basket)
+  const totalUniqueProducts = basketItems.length;
+
   return (
     <>
       <header className={styles.header}>
@@ -31,10 +35,13 @@ function Header() {
           </NavLink>
         </ul>
         <NavLink to='/basket' className={styles.basket}>
-          <img src={basket} />
+          <div className={styles.counterPosition}>
+            <p className={styles.counterHeader}>{totalUniqueProducts}</p>
+            <img src={basket} />
+          </div>
         </NavLink>
       </header>
-      <hr className={styles.headerLine}/>
+      <hr className={styles.headerLine} />
     </>
   );
 }

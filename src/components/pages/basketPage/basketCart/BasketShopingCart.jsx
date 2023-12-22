@@ -11,17 +11,12 @@ const BasketShopingCart = () => {
     const dispatch = useDispatch();
 
     const { basketItems } = useSelector(state => state.basket)
-    console.log('basketItems:', basketItems);
-
 
 
     const increment = (id, counter) => { dispatch(changeBasketItemCount({ basketItemId: id, counter: counter + 1 })) }
     const decrement = (id, counter) => { counter > 0 && dispatch(changeBasketItemCount({ basketItemId: id, counter: counter - 1 })) }
 
-    // const calculateTotal = () => {
-    //     const total = basketItems.reduce((total, item) => total + item.price + basketItems.length, 0);
-    //     return parseFloat(total.toFixed(2));
-    // };
+
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeItem({ basketItemId: itemId }));
@@ -41,9 +36,9 @@ const BasketShopingCart = () => {
                 const { value, counter } = basketItem
                 return (<div key={value.id}>
                     <p onClick={() => handleRemoveItem(value.id)} className={styles.clouseBtn}>X</p>
-                    <button onClick={()=>increment(value.id, counter)}>+</button>
+                    <button onClick={() => increment(value.id, counter)}>+</button>
                     <span>{counter}</span>
-                    <button onClick={()=>decrement(value.id, counter)}>-</button>
+                    <button onClick={() => decrement(value.id, counter)}>-</button>
                     {value.discont_price ?
                         <RenderBasketDiscountCart value={value} styles={styles} />
                         : <RenderBasketCart value={value} styles={styles} />

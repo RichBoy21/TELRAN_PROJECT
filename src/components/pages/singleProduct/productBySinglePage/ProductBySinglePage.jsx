@@ -1,49 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './ProductBySinglePage.module.css';
 import { getProducts } from '../../../../store/slices/productsSlice';
 import LinkButton from '../../../ui/LinkButton/LinkButton';
-import { renderSingleProductCard, renderSingleProductDiscountCard } from './calculatePrice';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
 import { useCounter } from '../../../../hook/useCounter'
 import Button from '../../../ui/Button/Button';
+import { RenderSingleProductDiscountCard } from './RenderSingleProductDiscountCard';
+import { RenderSingleProductCard } from './RenderSingleProductCard';
+import minus from '../../../../assets/images/minus.svg'
+import plus from '../../../../assets/images/plus.svg'
 
 const ProductBySinglePage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-
-
-
-
 
     const { productsAll } = useSelector((state) => state.products);
     const product = productsAll.find((p) => p.id === Number(id));
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
     const { basketItems } = useSelector(state => state.basket)
 
-
-    console.log(basketItems)
-
-
-
     const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
 
-
-
-
-
     const [isButtonClicked, setIsButtonClicked] = useState(false);
-    // const calculateTotal = () => {
-    //     const total = basketItems.reduce((total, item) => total + item.price + basketItems.length, 0);
-    //     return parseFloat(total.toFixed(2));
-    // };
+
 
     const handleAddItem = (item) => {
         dispatch(addItem(item));
         setIsButtonClicked(true);
     };
-
 
     useEffect(() => {
         dispatch(getProducts(id));
@@ -56,8 +42,6 @@ const ProductBySinglePage = () => {
             setCount(counter)
         }
     }, []);
-
-
 
     return (
         <>
@@ -85,14 +69,16 @@ const ProductBySinglePage = () => {
                         <p className={styles.productInfo}>{product.title}</p>
                         <div className={styles.singlePrice}>
                             {product.discont_price
-                                ? renderSingleProductDiscountCard(product, styles)
-                                : renderSingleProductCard(product, styles)}
+                                ? <RenderSingleProductDiscountCard product={product} styles={styles} />
+                                : <RenderSingleProductCard product={product} styles={styles} />}
                         </div>
 
                         <div className={styles.singleCount}>
-                            <button onClick={incrementCartCount}>+</button>
-                            <span>{cartCount}</span>
-                            <button onClick={decrementCartCount}>-</button>
+                            <div className={styles.IncrDecrCounter}>
+                                <button onClick={decrementCartCount} className={styles.decr}><img src={minus}/></button>
+                                <span className={styles.counter}>{cartCount}</span>
+                                <button onClick={incrementCartCount} className={styles.incr}><img src={plus}/></button>
+                            </div>
                             <Button onClick={() => handleAddItem({
                                 value: product,
                                 counter: cartCount
