@@ -1,6 +1,7 @@
 import { calculatePercentDiscount } from "./calculateDiscountPercentage";
 
 export const renderProductsDiscountCards = (product, styles) => {
+  
   if (product.discont_price) {
     const percentDiscount = calculatePercentDiscount(
       product.discont_price,

@@ -1,56 +1,58 @@
-
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './BasketShopingCart.module.css'
-import { useParams } from 'react-router-dom';
 import { clearCart, removeItem } from '../../../../store/slices/basketOrderSendSlice';
+import { RenderBasketDiscountCart } from './RenderBasketDiscountCart';
+import { RenderBasketCart } from './RenderBasketCart ';
+import { changeBasketItemCount } from './../../../../store/slices/basketOrderSendSlice'
 
 
 
 const BasketShopingCart = () => {
-    const { id } = useParams();
     const dispatch = useDispatch();
 
     const { basketItems } = useSelector(state => state.basket)
-    console.log(`one: ${basketItems}`)
-    const { productsAll } = useSelector((state) => state.products);
-    const product = productsAll.find((p) => p.id === Number(id));
-
-
-    const calculateTotal = () => {
-        const total = basketItems.reduce((total, item) => total + item.price + basketItems.length, 0);
-        return parseFloat(total.toFixed(2));
-    };
+    console.log('basketItems:', basketItems);
 
 
 
-    const handleRemoveItem = (item) => {
-        dispatch(removeItem(item));
+    const increment = (id, counter) => { dispatch(changeBasketItemCount({ basketItemId: id, counter: counter + 1 })) }
+    const decrement = (id, counter) => { counter > 0 && dispatch(changeBasketItemCount({ basketItemId: id, counter: counter - 1 })) }
+
+    // const calculateTotal = () => {
+    //     const total = basketItems.reduce((total, item) => total + item.price + basketItems.length, 0);
+    //     return parseFloat(total.toFixed(2));
+    // };
+
+    const handleRemoveItem = (itemId) => {
+        dispatch(removeItem({ basketItemId: itemId }));
     }
 
-    const handleClearCart = () => {
-        dispatch(clearCart());
-    }
+    // const handleClearCart = () => {
+    //     dispatch(clearCart());
+    // }
 
 
 
 
+    return (
+        <div>
 
-    return <div>
+            {basketItems.map((basketItem) => {
+                const { value, counter } = basketItem
+                return (<div key={value.id}>
+                    <p onClick={() => handleRemoveItem(value.id)} className={styles.clouseBtn}>X</p>
+                    <button onClick={()=>increment(value.id, counter)}>+</button>
+                    <span>{counter}</span>
+                    <button onClick={()=>decrement(value.id, counter)}>-</button>
+                    {value.discont_price ?
+                        <RenderBasketDiscountCart value={value} styles={styles} />
+                        : <RenderBasketCart value={value} styles={styles} />
+                    }
+                </div>)
+            })}
+        </div>
 
-
-
-
-        {basketItems.map((card, id) => (
-            <div key={id}>
-
-                <p>{card.title}</p>
-
-                <button onClick={() => handleRemoveItem(card)}>Удалить из корзины</button>
-            </div>
-        ))}
-        <p>Общая стоимость: ${calculateTotal()}</p>
-        <button onClick={handleClearCart}>Очистить корзину</button>
-    </div>;
+    );
 }
 
 export default BasketShopingCart;

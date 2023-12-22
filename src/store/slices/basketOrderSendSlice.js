@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 export const sendOrderData = createAsyncThunk(
   "basket/sendOrderData",
@@ -31,11 +32,41 @@ const basketSlice = createSlice({
 
   reducers: {
     addItem: (state, action) => {
-      state.basketItems.push(action.payload);
+      const { value, counter } = action.payload;
+
+      const isUnique = state.basketItems.find(
+        (basketItem) => basketItem.value.id === value.id
+      );
+      if (!isUnique) {
+        state.basketItems.push({ value, counter });
+      } else {
+        state.basketItems = state.basketItems.map((basketItem) => {
+          if (basketItem.value.id === value.id) {
+            return {
+              value: value,
+              counter: counter,
+            };
+          }
+          return basketItem;
+        });
+      }
+    },
+    changeBasketItemCount: (state, action) => {
+      const { basketItemId, counter } = action.payload;
+      state.basketItems = state.basketItems.map((basketItem) => {
+        if (basketItem.value.id === basketItemId) {
+          return {
+            ...basketItem,
+            counter: counter,
+          };
+        }
+        return basketItem;
+      });
     },
     removeItem: (state, action) => {
+      const { basketItemId } = action.payload;
       state.basketItems = state.basketItems.filter(
-        (item) => item.id !== action.payload.id
+        (basketItem) => basketItem.value.id !== basketItemId
       );
     },
     clearCart: (state) => {
@@ -58,5 +89,5 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, clearCart } = basketSlice.actions;
+export const { addItem, removeItem, clearCart,changeBasketItemCount } = basketSlice.actions;
 export default basketSlice.reducer;

@@ -6,19 +6,34 @@ import { getProducts } from '../../../../store/slices/productsSlice';
 import LinkButton from '../../../ui/LinkButton/LinkButton';
 import { renderSingleProductCard, renderSingleProductDiscountCard } from './calculatePrice';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
-import { CounterItems } from '../../../../hook/counter'
+import { useCounter } from '../../../../hook/useCounter'
+import Button from '../../../ui/Button/Button';
 
 const ProductBySinglePage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    const { cartCount, incrementCartCount, decrementCartCount } = CounterItems();
+
+
+
+
     const { productsAll } = useSelector((state) => state.products);
     const product = productsAll.find((p) => p.id === Number(id));
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
+    const { basketItems } = useSelector(state => state.basket)
+
+
+    console.log(basketItems)
 
 
 
+    const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
+
+
+
+
+
+    const [isButtonClicked, setIsButtonClicked] = useState(false);
     // const calculateTotal = () => {
     //     const total = basketItems.reduce((total, item) => total + item.price + basketItems.length, 0);
     //     return parseFloat(total.toFixed(2));
@@ -26,6 +41,7 @@ const ProductBySinglePage = () => {
 
     const handleAddItem = (item) => {
         dispatch(addItem(item));
+        setIsButtonClicked(true);
     };
 
 
@@ -33,7 +49,13 @@ const ProductBySinglePage = () => {
         dispatch(getProducts(id));
     }, [dispatch, id]);
 
-
+    useEffect(() => {
+        const currentProduct = basketItems.find((basketItem) => basketItem.value.id === product.id)
+        if (currentProduct) {
+            const { counter } = currentProduct
+            setCount(counter)
+        }
+    }, []);
 
 
 
@@ -71,7 +93,12 @@ const ProductBySinglePage = () => {
                             <button onClick={incrementCartCount}>+</button>
                             <span>{cartCount}</span>
                             <button onClick={decrementCartCount}>-</button>
-                            <button onClick={() => handleAddItem(product)}>add to cart</button>
+                            <Button onClick={() => handleAddItem({
+                                value: product,
+                                counter: cartCount
+                            })}
+                                title={isButtonClicked ? 'Added' : 'Add to cart'}
+                                className={isButtonClicked ? 'added' : 'addBtn'} />
                         </div>
 
                         <h3>Description</h3>
@@ -82,5 +109,8 @@ const ProductBySinglePage = () => {
         </>
     );
 };
+
+
+
 
 export default ProductBySinglePage;

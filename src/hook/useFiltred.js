@@ -62,10 +62,7 @@ export const useFiltred = (items) => {
     setSelectedOption(selectedOption.value);
   };
 
-  // const handleSelectChange = (e) => {
-  //   const selectedValue = e.target.value;
-  //   setSelectedOption(selectedValue);
-  // };
+ 
 
   return {
     getFiltredItems,

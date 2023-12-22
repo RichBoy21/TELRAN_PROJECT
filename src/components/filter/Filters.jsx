@@ -1,7 +1,7 @@
 import SelectFilter from '../selectFilter/SelectFilter';
 import styles from './Filters.module.css'
 
-const Filters = ({ handlePriceFromChange, handlePriceToChange, from, to, isDiscounted, handleDiscountChange, selectedOption, handleSelectChange }) => {
+const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, from, to, isDiscounted, handleDiscountChange, selectedOption, handleSelectChange }) => {
 
 
 
@@ -15,6 +15,7 @@ const Filters = ({ handlePriceFromChange, handlePriceToChange, from, to, isDisco
                     placeholder="from"
                     className={styles.inputsFrom}
                 ></input>
+
                 <input
                     value={to}
                     onChange={handlePriceToChange}
@@ -22,25 +23,21 @@ const Filters = ({ handlePriceFromChange, handlePriceToChange, from, to, isDisco
                     className={styles.inputsTo}
                 ></input>
             </div>
-
-            <label className={styles.labelPrice}>Discounted items</label>
-            <input
-                type="checkbox"
-                checked={isDiscounted}
-                onChange={handleDiscountChange}
-                className={styles.inputCheckbox}
-            />
+            {!isDiscountPage && (
+                <>
+                    <label className={styles.labelPrice}>Discounted items</label>
+                    <input
+                        type="checkbox"
+                        checked={isDiscounted}
+                        onChange={handleDiscountChange}
+                        className={styles.inputCheckbox}
+                    />
+                </>
+            )}
 
             <div className={styles.selectContainer}>
-                
                 <SelectFilter selectedOption={selectedOption} handleSelectChange={handleSelectChange} />
             </div>
-            {/* <select value={selectedOption} onChange={handleSelectChange} className={styles.inputSelect}>
-                <option value="by default" className={styles.option}>by default</option>
-                <option value="low" className={styles.option}>low</option>
-                <option value="high" className={styles.option}>high</option>
-            </select> */}
-
 
         </div>
     );
