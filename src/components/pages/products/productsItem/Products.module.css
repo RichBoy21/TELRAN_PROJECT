@@ -129,3 +129,9 @@
 .productLink{
     text-decoration: none;
 }
+
+.btnCards{
+    z-index: 1;
+    position: absolute;
+    margin: 230px 16px 16px;
+}

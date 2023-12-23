@@ -33,15 +33,15 @@ const BasketShopingCart = () => {
         <div>
 
             {basketItems.map((basketItem) => {
-                const { value, counter } = basketItem
-                return (<div key={value.id}>
-                    <p onClick={() => handleRemoveItem(value.id)} className={styles.clouseBtn}>X</p>
-                    <button onClick={() => increment(value.id, counter)}>+</button>
+                const { product, counter } = basketItem
+                return (<div key={product.id}>
+                    <p onClick={() => handleRemoveItem(product.id)} className={styles.clouseBtn}>X</p>
+                    <button onClick={() => increment(product.id, counter)}>+</button>
                     <span>{counter}</span>
-                    <button onClick={() => decrement(value.id, counter)}>-</button>
-                    {value.discont_price ?
-                        <RenderBasketDiscountCart value={value} styles={styles} />
-                        : <RenderBasketCart value={value} styles={styles} />
+                    <button onClick={() => decrement(product.id, counter)}>-</button>
+                    {product.discont_price ?
+                        <RenderBasketDiscountCart product={product} styles={styles} />
+                        : <RenderBasketCart product={product} styles={styles} />
                     }
                 </div>)
             })}

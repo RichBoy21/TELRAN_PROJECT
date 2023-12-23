@@ -3,8 +3,6 @@ import styles from './Filters.module.css'
 
 const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, from, to, isDiscounted, handleDiscountChange, selectedOption, handleSelectChange }) => {
 
-
-
     return (
         <div className={styles.filterInputsBox}>
             <div>
@@ -38,11 +36,9 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
             <div className={styles.selectContainer}>
                 <SelectFilter selectedOption={selectedOption} handleSelectChange={handleSelectChange} />
             </div>
-
         </div>
     );
 }
-
 
 export default Filters;
 

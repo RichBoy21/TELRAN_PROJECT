@@ -1,13 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ProductsByCategoriesIdPage.module.css";
 import { getCategoriesAll, getProductsByCategoryId } from "../../../../store/slices/categoriesSlice";
 import LinkButton from "../../../ui/LinkButton/LinkButton";
-import { renderProductsCards, renderProductsDiscountCards } from "../../../../utils/renderCardsProducts";
 import { useFiltred } from "../../../../hook/useFiltred";
 import Filters from "../../../filter/Filters";
+import { RenderProductsCards } from "./renderCards/RenderProductsCards";
+import { RenderProductsDiscountCards } from "./renderCards/RenderProductsDiscountCards";
+import { addItem } from "../../../../store/slices/basketOrderSendSlice";
+import Button from "../../../ui/Button/Button";
+import { useCounter } from "../../../../hook/useCounter";
 
 
 const ProductsByCategoryId = () => {
@@ -16,10 +20,27 @@ const ProductsByCategoryId = () => {
   const { statusProductsByCategoryId, productsByCategoryId: { data, category }, error } = useSelector((state) => state.categories);
   const { getFiltredItems, from, to, handlePriceFromChange, handlePriceToChange, handleDiscountChange, handleSelectChange, isDiscounted, selectedOption } = useFiltred()
 
+
+  const { cartCount } = useCounter();
+  const { basketItems } = useSelector(state => state.basket)
+
+
+
+
+
   useEffect(() => {
     dispatch(getProductsByCategoryId(id));
     dispatch(getCategoriesAll());
   }, [dispatch, id]);
+
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
+
+
+
+
 
   return (
     <>
@@ -52,14 +73,29 @@ const ProductsByCategoryId = () => {
         {error && <h2>Error: {error}</h2>}
         {statusProductsByCategoryId === "loading" && <h2>Loading....</h2>}
         {statusProductsByCategoryId === "fulfilled" &&
-          getFiltredItems(data).map((product) => (
-            <Link className={styles.productLink} key={product.id} to={`/products/${product.id}`}>
-              {product.discont_price
-                ? renderProductsDiscountCards(product, styles)
-                : renderProductsCards(product, styles)}
-            </Link>
-          ))
-        }
+          getFiltredItems(data).map((product) => {
+            const isDisabled = basketItems.find(basketItem => basketItem.product.id === product.id)
+            return (
+              <div key={product.id}>
+                <div className={styles.btnCards}>
+                  <Button
+                    onClick={() => handleAddItem({
+                      product: product,
+                      counter: cartCount
+                    })}
+                    disabled={isDisabled}
+                    title={isDisabled ? 'Added' : 'Add to cart'}
+                    className={isDisabled ? 'added_two' : 'addBtn_two'}
+                  />
+                </div>
+                <Link className={styles.productLink} to={`/products/${product.id}`}>
+                  {product.discont_price
+                    ? <RenderProductsDiscountCards product={product} styles={styles} />
+                    : <RenderProductsCards product={product} styles={styles} />}
+                </Link>
+              </div>
+            );
+          })}
       </div>
     </>
   );

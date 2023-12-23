@@ -25,36 +25,38 @@ export const sendOrderData = createAsyncThunk(
 const basketSlice = createSlice({
   name: "basket",
   initialState: {
-    basketItems: [],
+    basketItems: JSON.parse(localStorage.getItem('basketItems')) || [],
     status: "idle",
     error: null,
   },
 
   reducers: {
     addItem: (state, action) => {
-      const { value, counter } = action.payload;
+      const { product, counter } = action.payload;
 
       const isUnique = state.basketItems.find(
-        (basketItem) => basketItem.value.id === value.id
+        (basketItem) => basketItem.product.id === product.id
       );
       if (!isUnique) {
-        state.basketItems.push({ value, counter });
+        state.basketItems.push({ product, counter });
+        localStorage.setItem('basketItems', JSON.stringify(state.basketItems));
       } else {
         state.basketItems = state.basketItems.map((basketItem) => {
-          if (basketItem.value.id === value.id) {
+          if (basketItem.product.id === product.id) {
             return {
-              value: value,
+              product: product,
               counter: counter,
             };
           }
           return basketItem;
         });
+       
       }
     },
     changeBasketItemCount: (state, action) => {
       const { basketItemId, counter } = action.payload;
       state.basketItems = state.basketItems.map((basketItem) => {
-        if (basketItem.value.id === basketItemId) {
+        if (basketItem.product.id === basketItemId) {
           return {
             ...basketItem,
             counter: counter,
@@ -66,8 +68,9 @@ const basketSlice = createSlice({
     removeItem: (state, action) => {
       const { basketItemId } = action.payload;
       state.basketItems = state.basketItems.filter(
-        (basketItem) => basketItem.value.id !== basketItemId
+        (basketItem) => basketItem.product.id !== basketItemId
       );
+      localStorage.setItem('basketItems', JSON.stringify(state.basketItems));
     },
     clearCart: (state) => {
       state.basketItems = [];
@@ -89,5 +92,6 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, clearCart,changeBasketItemCount } = basketSlice.actions;
+export const { addItem, removeItem, clearCart, changeBasketItemCount } =
+  basketSlice.actions;
 export default basketSlice.reducer;

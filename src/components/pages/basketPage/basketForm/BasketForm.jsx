@@ -9,7 +9,7 @@ const BasketForm = () => {
     const totalUniqueProducts = basketItems.length;
 
     const calculateTotal = () => {
-        const total = basketItems.reduce((total, item) => total + item.value.price * item.counter, 0);
+        const total = basketItems.reduce((total, item) => total + item.product.price * item.counter, 0);
         return parseFloat(total.toFixed(2));
     };
 

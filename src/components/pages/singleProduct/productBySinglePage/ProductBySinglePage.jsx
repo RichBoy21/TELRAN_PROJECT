@@ -7,8 +7,8 @@ import LinkButton from '../../../ui/LinkButton/LinkButton';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
 import { useCounter } from '../../../../hook/useCounter'
 import Button from '../../../ui/Button/Button';
-import { RenderSingleProductDiscountCard } from './RenderSingleProductDiscountCard';
-import { RenderSingleProductCard } from './RenderSingleProductCard';
+import { RenderSingleProductDiscountCard } from './renderSingleProduct/RenderSingleProductDiscountCard';
+import { RenderSingleProductCard } from './renderSingleProduct/RenderSingleProductCard';
 import minus from '../../../../assets/images/minus.svg'
 import plus from '../../../../assets/images/plus.svg'
 
@@ -17,7 +17,7 @@ const ProductBySinglePage = () => {
     const dispatch = useDispatch();
 
     const { productsAll } = useSelector((state) => state.products);
-    const product = productsAll.find((p) => p.id === Number(id));
+    const currentProductFromProductAll = productsAll.find((p) => p.id === Number(id));
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
     const { basketItems } = useSelector(state => state.basket)
 
@@ -25,23 +25,32 @@ const ProductBySinglePage = () => {
 
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-
-    const handleAddItem = (item) => {
-        dispatch(addItem(item));
-        setIsButtonClicked(true);
-    };
+    console.log(isButtonClicked)
+    console.log(id)
+    console.log(basketItems)
+    useEffect(() => {
+        basketItems.forEach((basketItem) => {
+            if (basketItem.product.id === Number(id)) {
+                setIsButtonClicked(true);
+            }
+        })
+    }, [basketItems])
 
     useEffect(() => {
         dispatch(getProducts(id));
     }, [dispatch, id]);
 
     useEffect(() => {
-        const currentProduct = basketItems.find((basketItem) => basketItem.value.id === product.id)
-        if (currentProduct) {
-            const { counter } = currentProduct
+        const currentProductFromBascketItems = basketItems.find((basketItem) => basketItem.product.id === currentProductFromProductAll.id)
+        if (currentProductFromBascketItems) {
+            const { counter } = currentProductFromBascketItems
             setCount(counter)
         }
     }, []);
+
+    const handleAddItem = (item) => {
+        dispatch(addItem(item));
+    };
 
     return (
         <>
@@ -52,35 +61,35 @@ const ProductBySinglePage = () => {
                 <hr />
                 {category && <LinkButton path={`/categories/${category.id}`} title={category.title} className={'historyBtn'} />}
                 <hr />
-                {product && <LinkButton title={product.title} className={'historyBtn'} />}
+                {currentProductFromProductAll && <LinkButton title={currentProductFromProductAll.title} className={'historyBtn'} />}
             </div>
 
-            {product && (
+            {currentProductFromProductAll && (
                 <div className={styles.singleProductContainer}>
                     <div>
                         <img
-                            src={`http://localhost:3333${product.image}`}
-                            alt={product.title}
+                            src={`http://localhost:3333${currentProductFromProductAll.image}`}
+                            alt={currentProductFromProductAll.title}
                             className={styles.singleImg}
                         />
                     </div>
 
                     <div>
-                        <p className={styles.productInfo}>{product.title}</p>
+                        <p className={styles.productInfo}>{currentProductFromProductAll.title}</p>
                         <div className={styles.singlePrice}>
-                            {product.discont_price
-                                ? <RenderSingleProductDiscountCard product={product} styles={styles} />
-                                : <RenderSingleProductCard product={product} styles={styles} />}
+                            {currentProductFromProductAll.discont_price
+                                ? <RenderSingleProductDiscountCard product={currentProductFromProductAll} styles={styles} />
+                                : <RenderSingleProductCard product={currentProductFromProductAll} styles={styles} />}
                         </div>
 
                         <div className={styles.singleCount}>
                             <div className={styles.IncrDecrCounter}>
-                                <button onClick={decrementCartCount} className={styles.decr}><img src={minus}/></button>
+                                <button disabled={isButtonClicked} onClick={decrementCartCount} className={styles.decr}><img src={minus} /></button>
                                 <span className={styles.counter}>{cartCount}</span>
-                                <button onClick={incrementCartCount} className={styles.incr}><img src={plus}/></button>
+                                <button disabled={isButtonClicked} onClick={incrementCartCount} className={styles.incr}><img src={plus} /></button>
                             </div>
-                            <Button onClick={() => handleAddItem({
-                                value: product,
+                            <Button disabled={isButtonClicked} onClick={() => handleAddItem({
+                                product: currentProductFromProductAll,
                                 counter: cartCount
                             })}
                                 title={isButtonClicked ? 'Added' : 'Add to cart'}
@@ -88,7 +97,7 @@ const ProductBySinglePage = () => {
                         </div>
 
                         <h3>Description</h3>
-                        <p>{product.description}</p>
+                        <p>{currentProductFromProductAll.description}</p>
                     </div>
                 </div>
             )}

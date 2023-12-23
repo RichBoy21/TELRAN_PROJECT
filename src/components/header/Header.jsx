@@ -3,6 +3,7 @@ import basket from "../../assets/images/basket.svg";
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { navigationItems } from "./configHeader";
 
 
 
@@ -16,33 +17,27 @@ function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <NavLink to="/" >
-            <img src={logo} />
+          <NavLink to="/">
+            <img src={logo} alt="Logo" />
           </NavLink>
         </div>
         <ul className={styles.navBar}>
-          <NavLink to="/" className={getColorActive}>
-            Main Page
-          </NavLink>
-          <NavLink to="/categories" className={getColorActive}>
-            Categories
-          </NavLink>
-          <NavLink to="/products" className={getColorActive}>
-            All products
-          </NavLink>
-          <NavLink to="/sales" className={getColorActive}>
-            All sales
-          </NavLink>
+          {navigationItems.map((item, id) => (
+            <NavLink key={id} to={item.to} className={getColorActive}>
+              {item.text}
+            </NavLink>
+          ))}
         </ul>
-        <NavLink to='/basket' className={styles.basket}>
+        <NavLink to="/basket" className={styles.basket}>
           <div className={styles.counterPosition}>
             <p className={styles.counterHeader}>{totalUniqueProducts}</p>
-            <img src={basket} />
+            <img src={basket} alt="Basket" />
           </div>
         </NavLink>
       </header>
       <hr className={styles.headerLine} />
     </>
   );
-}
+};
+
 export default Header;

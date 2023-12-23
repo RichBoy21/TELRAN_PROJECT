@@ -13,8 +13,14 @@
     margin: 32px 0;
 }
 
-.discountBtn {
+.discountBtn,
+.addBtn,
+.addBtn_two {
     composes: buttonCommon;
+    cursor: pointer;
+}
+
+.discountBtn {
     padding: 16px 32px;
     width: 100%;
     border: 1px solid #fff;
@@ -25,7 +31,35 @@
     color: #fff;
     background-color: black;
     border: 1px solid black;
-    cursor: pointer;
+}
+
+.addBtn,
+.addBtn_two,
+.added,
+.added_two {
+    background-color: #393;
+    color: #fff;
+    border: none;
+}
+
+.addBtn:hover,
+.addBtn_two:hover {
+    color: #fff;
+    background: #282828;
+}
+
+.added,
+.added_two {
+    composes: buttonCommon;
+    border: 1px solid #282828;
+    background: #fff;
+    color: #282828;
+}
+
+.addBtn_two,
+.added_two {
+    margin: 0px;
+    width: 284px;
 }
 
 .requestBtn {
@@ -34,26 +68,6 @@
     width: 100%;
     background-color: #f1f3f4;
     border: none;
-}
-
-.addBtn {
-    composes: buttonCommon;
-    background-color: #393;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.addBtn:hover {
-    color: #fff;
-    background: #282828;
-}
-
-.added {
-    composes: buttonCommon;
-    border: 1px solid #282828;
-    background: #fff;
-    color: #282828;
 }
 
 .closeButton {

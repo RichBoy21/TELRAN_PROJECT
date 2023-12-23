@@ -6,10 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
-import { renderProductsDiscountCards } from "../../../../../utils/renderCardsProducts";
 import { getProducts } from "../../../../../store/slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { RenderProductsDiscountCards } from "./RenderSaleItem";
 
 function SaleItem() {
 
@@ -35,7 +35,7 @@ function SaleItem() {
           .filter((product) => product.discont_price !== null)
           .map((product) => (
             <SwiperSlide key={product.id}>
-              {renderProductsDiscountCards(product, styles)}
+              {<RenderProductsDiscountCards product={product} styles={styles} />}
             </SwiperSlide>
           ))}
       </Swiper>
