@@ -83,3 +83,23 @@
     cursor: pointer;
     white-space: nowrap;
 }
+.emptyBtn {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: none;
+    border-radius: 6px;
+    background: #393;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    cursor: pointer;
+    margin: auto;
+}

@@ -152,6 +152,7 @@ h3 {
     border-radius: 6px;
     border: 1px solid #DDD;
     padding: 17px;
+    cursor: zoom-in ;
 }
 
 .decr {
@@ -164,5 +165,6 @@ h3 {
     border-radius: 6px;
     border: 1px solid #DDD;
     padding: 17px;
+    cursor: zoom-out ;
 }
 
