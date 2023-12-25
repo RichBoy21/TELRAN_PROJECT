@@ -6,6 +6,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 import { FreeMode, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 function CategoriesItem({ categories, status, error }) {
   return (
@@ -24,12 +25,14 @@ function CategoriesItem({ categories, status, error }) {
       >
         {categories?.map((category) => (
           <SwiperSlide key={category.id}>
-            <img
-              className={styles.categoriesImg}
-              src={`http://localhost:3333${category.image}`}
-              alt={category.title}
-            />
-            <p className={styles.categoryInfo}>{category.title}</p>
+            <Link to={`/categories/${category.id}`} className={styles.links}>
+              <img
+                className={styles.categoriesImg}
+                src={`http://localhost:3333${category.image}`}
+                alt={category.title}
+              />
+              <p className={styles.categoryInfo}>{category.title}</p>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

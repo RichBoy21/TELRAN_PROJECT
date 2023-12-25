@@ -19,28 +19,17 @@ const ProductsByCategoryId = () => {
   const dispatch = useDispatch();
   const { statusProductsByCategoryId, productsByCategoryId: { data, category }, error } = useSelector((state) => state.categories);
   const { getFiltredItems, from, to, handlePriceFromChange, handlePriceToChange, handleDiscountChange, handleSelectChange, isDiscounted, selectedOption } = useFiltred()
-
-
   const { cartCount } = useCounter();
   const { basketItems } = useSelector(state => state.basket)
-
-
-
-
 
   useEffect(() => {
     dispatch(getProductsByCategoryId(id));
     dispatch(getCategoriesAll());
   }, [dispatch, id]);
 
-
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
-
-
-
-
 
   return (
     <>
@@ -52,13 +41,8 @@ const ProductsByCategoryId = () => {
         {category && <LinkButton title={category.title} className={'historyBtn'} />}
       </div>
 
-
-
-
-
       {statusProductsByCategoryId === "fulfilled" &&
         <h1 className={styles.productTitle}>{category.title}</h1>}
-
       <Filters to={to}
         from={from}
         handlePriceFromChange={handlePriceFromChange}
@@ -68,7 +52,6 @@ const ProductsByCategoryId = () => {
         isDiscounted={isDiscounted}
         selectedOption={selectedOption}
       />
-
       <div className={styles.productsContainer}>
         {error && <h2>Error: {error}</h2>}
         {statusProductsByCategoryId === "loading" && <h2>Loading....</h2>}

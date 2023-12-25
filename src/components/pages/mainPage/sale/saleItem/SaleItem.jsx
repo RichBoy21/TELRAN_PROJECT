@@ -10,6 +10,7 @@ import { getProducts } from "../../../../../store/slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { RenderProductsDiscountCards } from "./RenderSaleItem";
+import { Link } from "react-router-dom";
 
 function SaleItem() {
 
@@ -35,11 +36,14 @@ function SaleItem() {
           .filter((product) => product.discont_price !== null)
           .map((product) => (
             <SwiperSlide key={product.id}>
-              {<RenderProductsDiscountCards product={product} styles={styles} />}
+              <Link className={styles.productLink} to={`/products/${product.id}`}>
+                <RenderProductsDiscountCards product={product} styles={styles} />
+              </Link>
             </SwiperSlide>
-          ))}
+          ))
+        }
       </Swiper>
-    </div>
+    </div >
   );
 }
 
