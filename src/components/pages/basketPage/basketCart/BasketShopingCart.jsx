@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './BasketShopingCart.module.css'
-import { clearCart, removeItem } from '../../../../store/slices/basketOrderSendSlice';
+import {  removeItem } from '../../../../store/slices/basketOrderSendSlice';
 import { RenderBasketDiscountCart } from './RenderBasketDiscountCart';
 import { RenderBasketCart } from './RenderBasketCart ';
 import { changeBasketItemCount } from './../../../../store/slices/basketOrderSendSlice'
@@ -25,10 +25,7 @@ const BasketShopingCart = () => {
         dispatch(removeItem({ basketItemId: itemId }));
     }
 
-    // const handleClearCart = () => {
-    //     dispatch(clearCart());
-    // }
-
+   
 
 
 
@@ -39,8 +36,6 @@ const BasketShopingCart = () => {
                     const { product, counter } = basketItem;
                     return (
                         <div key={product.id} className={styles.containerBasketCard}>
-                            
-
                             {product.discont_price ? (
                                 <RenderBasketDiscountCart
                                     product={product}
@@ -49,9 +44,9 @@ const BasketShopingCart = () => {
                                     decrement={decrement}
                                     handleRemoveItem={handleRemoveItem}
                                     plus={plus}
-                                    minus={minus} 
+                                    minus={minus}
                                     counter={counter}
-                                    clouse={clouse}/>
+                                    clouse={clouse} />
                             ) : (
                                 <RenderBasketCart
                                     product={product}
@@ -60,9 +55,9 @@ const BasketShopingCart = () => {
                                     decrement={decrement}
                                     handleRemoveItem={handleRemoveItem}
                                     plus={plus}
-                                    minus={minus} 
+                                    minus={minus}
                                     counter={counter}
-                                    clouse={clouse}/>
+                                    clouse={clouse} />
                             )}
                         </div>
                     );

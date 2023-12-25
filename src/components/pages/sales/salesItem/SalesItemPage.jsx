@@ -25,7 +25,6 @@ const SalesItemPage = () => {
 
     const handleAddItem = (item) => {
         dispatch(addItem(item));
-        console.log(item)
     };
 
     const discountedProducts = productsAll.filter((product) => product.discont_price !== null);

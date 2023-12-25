@@ -74,6 +74,7 @@ const basketSlice = createSlice({
     },
     clearCart: (state) => {
       state.basketItems = [];
+      localStorage.removeItem('basketItems', JSON.stringify(state.basketItems));
     },
   },
   extraReducers: (builder) => {

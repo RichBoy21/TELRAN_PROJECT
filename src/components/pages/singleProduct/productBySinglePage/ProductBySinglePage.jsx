@@ -25,9 +25,7 @@ const ProductBySinglePage = () => {
 
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-    console.log(isButtonClicked)
-    console.log(id)
-    console.log(basketItems)
+
     useEffect(() => {
         basketItems.forEach((basketItem) => {
             if (basketItem.product.id === Number(id)) {

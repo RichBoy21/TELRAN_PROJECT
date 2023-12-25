@@ -1,10 +1,10 @@
 import LinkButton from '../../ui/LinkButton/LinkButton';
 import styles from './BasketPage.module.css'
 import BasketForm from './basketForm/BasketForm';
-import BasketShopingCart from './basketCart/BasketShopingCart';
+
+
 
 const BasketPage = () => {
-
 
 
 
@@ -16,7 +16,6 @@ const BasketPage = () => {
             <LinkButton path={"/Products"} title={"Back to the store"} className={"basketLinkButton"} />
         </div>
         <div className={styles.formCardsContainer}>
-            <BasketShopingCart />
             <BasketForm />
         </div>
     </div>;

@@ -1,16 +1,19 @@
 .basketContainer {
     padding: 0px 40px;
 }
-.basketTitleBtn{
+
+.basketTitleBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 40px 0px;
 }
-.basketTitleBtn h2{
+
+.basketTitleBtn h2 {
     margin-right: 32px;
     white-space: nowrap;
 }
+
 .shoppingCart {
     color: #282828;
     font-family: 'Montserrat', sans-serif;
@@ -28,8 +31,10 @@
     border-left: none;
     border-right: none;
 }
-.formCardsContainer{
+
+.formCardsContainer {
     display: flex;
     justify-content: space-between;
     gap: 32px;
+    align-items: center;
 }
