@@ -12,6 +12,7 @@ export const sendOrderData = createAsyncThunk(
         },
         body: JSON.stringify(basketData),
       });
+
       if (!response.ok) {
         throw new Error("Server responded with an error!");
       }
@@ -25,7 +26,7 @@ export const sendOrderData = createAsyncThunk(
 const basketSlice = createSlice({
   name: "basket",
   initialState: {
-    basketItems: JSON.parse(localStorage.getItem('basketItems')) || [],
+    basketItems: JSON.parse(localStorage.getItem("basketItems")) || [],
     status: "idle",
     error: null,
   },
@@ -39,7 +40,7 @@ const basketSlice = createSlice({
       );
       if (!isUnique) {
         state.basketItems.push({ product, counter });
-        localStorage.setItem('basketItems', JSON.stringify(state.basketItems));
+        localStorage.setItem("basketItems", JSON.stringify(state.basketItems));
       } else {
         state.basketItems = state.basketItems.map((basketItem) => {
           if (basketItem.product.id === product.id) {
@@ -50,7 +51,6 @@ const basketSlice = createSlice({
           }
           return basketItem;
         });
-       
       }
     },
     changeBasketItemCount: (state, action) => {
@@ -70,11 +70,12 @@ const basketSlice = createSlice({
       state.basketItems = state.basketItems.filter(
         (basketItem) => basketItem.product.id !== basketItemId
       );
-      localStorage.setItem('basketItems', JSON.stringify(state.basketItems));
+      localStorage.setItem("basketItems", JSON.stringify(state.basketItems));
     },
     clearCart: (state) => {
       state.basketItems = [];
-      localStorage.removeItem('basketItems', JSON.stringify(state.basketItems));
+      state.status = "idle";
+      localStorage.removeItem("basketItems", JSON.stringify(state.basketItems));
     },
   },
   extraReducers: (builder) => {
@@ -92,7 +93,7 @@ const basketSlice = createSlice({
       });
   },
 });
-
+export const selectedBasketStatus = (state) => state.basket.status;
 export const { addItem, removeItem, clearCart, changeBasketItemCount } =
   basketSlice.actions;
 export default basketSlice.reducer;

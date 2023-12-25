@@ -13,7 +13,6 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
                     placeholder="from"
                     className={styles.inputsFrom}
                 ></input>
-
                 <input
                     value={to}
                     onChange={handlePriceToChange}
@@ -32,7 +31,6 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
                     />
                 </>
             )}
-
             <div className={styles.selectContainer}>
                 <SelectFilter selectedOption={selectedOption} handleSelectChange={handleSelectChange} />
             </div>

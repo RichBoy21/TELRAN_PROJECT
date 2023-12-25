@@ -12,22 +12,13 @@ import plus from '../../../../assets/images/plus.svg'
 
 const BasketShopingCart = () => {
     const dispatch = useDispatch();
-
     const { basketItems } = useSelector(state => state.basket)
-
-
     const increment = (id, counter) => { dispatch(changeBasketItemCount({ basketItemId: id, counter: counter + 1 })) }
     const decrement = (id, counter) => { counter > 0 && dispatch(changeBasketItemCount({ basketItemId: id, counter: counter - 1 })) }
-
-
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeItem({ basketItemId: itemId }));
     }
-
-   
-
-
 
     return (
         <div className={styles.containerBasket}>

@@ -7,14 +7,14 @@ import Button from '../../../../ui/Button/Button';
 import { inputFields } from '../../../../../utils/ formConfig';
 import { useEffect, useState } from 'react';
 import Modal from '../../../../ui/Modal/Modal';
-
+import { selectedBasketStatus } from '../../../../../store/slices/basketOrderSendSlice'
 
 const Form = () => {
     const dispatch = useDispatch()
     const { basketItems } = useSelector(state => state.basket)
-    const { status, error } = useSelector((state) => state.basket)
+    const status = useSelector(selectedBasketStatus)
+    console.log(status)
     const [modalActive, setModalActive] = useState(false)
-    console.log(status);
 
     const {
         register,
@@ -25,24 +25,27 @@ const Form = () => {
         mode: "all",
     });
 
-    useEffect((e) => {
-        
-        console.log(status);
-      
-    });
-
-    const getDataFormInputs = (data) => {
-        dispatch(sendOrderData(data));
-        reset();
+    useEffect(() => {
+        let timeoutId;
         if (status === "succeeded") {
             setModalActive(true);
-            reset()
-            const timeoutId = setTimeout(() => {
-                setModalActive(false);
-                dispatch(clearCart());
-                reset()
+
+            timeoutId = setTimeout(() => {
+             setActive()
             }, 3000);
         }
+        return () => { clearTimeout(timeoutId) }
+    }, [status])
+
+    function setActive() {
+        setModalActive(false);
+        dispatch(clearCart());
+    }
+
+    const getDataFormInputs = (data) => {
+
+        dispatch(sendOrderData(data));
+        reset();
     };
 
     const calculateTotal = () => {
@@ -54,7 +57,7 @@ const Form = () => {
 
     return (
         <>
-            <Modal active={modalActive} setActive={setModalActive}>
+            <Modal active={modalActive} setActive={setActive}>
                 <h3 className={styles.modalTitle}>Congratulations!</h3>
                 <p className={styles.modalText}>Your order has been successfully placed on the website.</p>
                 <br />
