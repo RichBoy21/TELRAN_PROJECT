@@ -1,3 +1,9 @@
+.basketFormContainer {
+    background-color: #F1F3F4;
+    padding: 32px;
+    border-radius: 12px;
+}
+
 .titleForm {
     color: #282828;
     font-family: 'Montserrat', sans-serif;
@@ -5,6 +11,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 110%;
+    margin-bottom: 24px;
 }
 
 .items {
@@ -26,6 +33,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    margin-bottom: 32px;
 }
 
 
@@ -52,8 +60,28 @@
     line-height: 110%;
     margin-bottom: 30px;
 }
-.emptyBox{
+
+.emptyBox {
     margin: auto;
     display: flex;
     align-items: center;
+}
+
+.modalTitle {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    margin: 0px 105px 24px 0px;
+}
+
+.modalText {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
 }

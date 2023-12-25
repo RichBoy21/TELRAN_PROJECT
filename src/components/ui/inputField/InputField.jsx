@@ -1,4 +1,4 @@
-import ErrorMessage from "../../../../ui/ErrorMessage/ErrorMessage";
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import styles from './InputField.module.css'
 
 const InputField = ({ name, validation, placeholder, register, errors,className }) => (

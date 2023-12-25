@@ -1,5 +1,3 @@
-
-
 import styles from "./DiscountSection.module.css";
 import discount from "../../../../assets/images/discount.svg";
 

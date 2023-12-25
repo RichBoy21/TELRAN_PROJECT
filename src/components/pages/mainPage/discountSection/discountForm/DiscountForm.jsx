@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { submitSalesData } from "../../../../../store/slices/saleSlice";
 import { useEffect, useState } from "react";
-import InputField from "./../inputField/InputField";
-import { inputFields } from "./ formConfig";
+import { inputFields } from "../../../../../utils/ formConfig";
+import InputField from "../../../../ui/inputField/InputField";
 
 const DiscountForm = () => {
   const dispatch = useDispatch();

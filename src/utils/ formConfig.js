@@ -2,7 +2,7 @@ import {
   nameInputValidation,
   phoneNameInputValidation,
   emailInputValidation,
-} from "../../../../../utils/validation";
+} from "./validation";
 
 export const inputFields = [
   { name: "name", validation: nameInputValidation, placeholder: "Name" },
