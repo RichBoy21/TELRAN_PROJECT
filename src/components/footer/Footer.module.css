@@ -68,3 +68,18 @@
     display: grid;
     gap: 16px;
 }
+@media (max-width: 768px) {
+    .footerTitle {
+        font-size: 56px;
+    }
+}
+@media (max-width: 480px) {
+    .footerTitle {
+        font-size: 48px;
+    }
+}
+@media (max-width: 360px) {
+    .footerTitle {
+        font-size: 40px;
+    }
+}

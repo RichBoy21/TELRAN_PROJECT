@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Filters from "../components/filter/Filters";
+
 
 export const useFiltred = (items) => {
   const [from, setFrom] = useState("");

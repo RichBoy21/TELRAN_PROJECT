@@ -1,11 +1,12 @@
-.productsItemContainer{
+.productsItemContainer {
     margin-bottom: 80px;
 }
+
 .productsContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
-    
+
     padding: 0px 40px;
 }
 
@@ -129,3 +130,6 @@
     border-radius: 12px 12px 0 0;
 }
 
+.productLink {
+    text-decoration: none;
+}
