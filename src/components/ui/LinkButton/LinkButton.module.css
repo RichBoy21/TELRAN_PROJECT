@@ -103,3 +103,16 @@
     cursor: pointer;
     margin: auto;
 }
+
+
+@media (max-width: 480px) {
+    .mainLinkButton {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .saleLinkButton {
+        font-size: 14px;
+    }
+}

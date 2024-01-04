@@ -1,0 +1,48 @@
+.basketLogo {
+    margin-top: 10px;
+}
+
+.counterPosition {
+    position: relative;
+}
+
+.counterHeader {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90%;
+    background-color: #393;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+
+    .imgBasketLogo {
+        order: 1;
+        width: 32px;
+        height: 32px;
+    }
+
+    .counterHeader {
+        right: 15px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .counterPosition {
+        padding-left: 50vw;
+        margin-right: 1rem;
+    }
+
+}

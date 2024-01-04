@@ -1,19 +1,12 @@
 import styles from "./SaleItem.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import './styles.css'
-
-import "swiper/css";
-import "swiper/css/navigation";
-
-import { Navigation } from "swiper/modules";
 import { getProducts } from "../../../../../store/slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RenderProductsDiscountCards } from "./RenderSaleItem";
 import { Link } from "react-router-dom";
 
 function SaleItem() {
-
+  const [randomProducts, setRandomProducts] = useState([]);
   const { status, error, productsAll } = useSelector((state) => state.products);
 
   const dispatch = useDispatch();
@@ -22,27 +15,46 @@ function SaleItem() {
     dispatch(getProducts());
   }, [dispatch]);
 
+
+  
+
+  useEffect(() => {
+    if (productsAll.length >= 4 && productsAll.some(product => product.discont_price !== null)) {
+      const numberOfProductsToShow = 4;
+      const randomIndexes = [];
+      let attempts = 0;
+  
+      while (randomIndexes.length < numberOfProductsToShow && attempts < 100) {
+        const randomIndex = Math.floor(Math.random() * productsAll.length);
+        if (!randomIndexes.includes(randomIndex) && productsAll[randomIndex].discont_price !== null) {
+          randomIndexes.push(randomIndex);
+        }
+        attempts++;
+      }
+      const selectedProducts = randomIndexes.map(index => productsAll[index]);
+      setRandomProducts(selectedProducts);
+    }
+  }, [productsAll]);
+  
+
+
+
   return (
     <div className={styles.productsItemContainer}>
       {error && <h2>Error ....</h2>}
       {status === "loading" && <h2>loading ....</h2>}
-      <Swiper
-        navigation={true}
-        modules={[Navigation]}
-        className="mySwiper"
-        slidesPerView={4}
-      >
-        {productsAll
+      
+        {randomProducts
           .filter((product) => product.discont_price !== null)
           .map((product) => (
-            <SwiperSlide key={product.id}>
+            <div key={product.id} className={styles.salesCardItem}>
               <Link className={styles.productLink} to={`/products/${product.id}`}>
                 <RenderProductsDiscountCards product={product} styles={styles} />
               </Link>
-            </SwiperSlide>
+            </div>
           ))
         }
-      </Swiper>
+      
     </div >
   );
 }

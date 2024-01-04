@@ -5,12 +5,13 @@ import SaleItem from "./saleItem/SaleItem";
 const Sale = () => {
 
   return (
-    <div>
+    <div className={styles.saleContainer}>
       <div className={styles.saleTitle}>
         <h2>Sale</h2>
         <hr />
-        <LinkButton path={"/sales"} title={"All sales"} className={"saleLinkButton"}
-        />
+        <div className={styles.saleLinkButtonContainer}>
+          <LinkButton path={"/sales"} title={"All sales"} className={"saleLinkButton"} />
+        </div>
       </div>
       <SaleItem />
     </div>

@@ -44,3 +44,95 @@ h1 {
     border-left: none;
     border-right: none;
 }
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 90px;
+    }
+
+    .guideContent {
+        padding: 60px 20px 218px;
+    }
+}
+
+@media (max-width: 936px) {
+    h1 {
+        font-size: 72px;
+    }
+
+    .guideContent {
+        padding: 60px 20px 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 68px;
+    }
+
+    .guideContent {
+        padding: 60px 20px 424px;
+    }
+
+    .categoriesTitle h2 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 581px) {
+    .categoriesTitle h2 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .guideContent {
+        padding: 60px 20px 286px;
+    }
+
+    .categoriesTitle h2 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 475px) {
+    .categoriesContainer {
+        position: relative;
+    }
+
+    .mainLinkButtonContainer {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .categoriesTitle hr {
+        display: none;
+    }
+
+    .categoriesTitle h2 {
+        margin: auto;
+    }
+}
+
+
+
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 52px;
+    }
+
+    .guideContent {
+        padding: 50px 20px 322px;
+    }
+
+    .categoriesTitle h2 {
+        font-size: 40px;
+    }
+}

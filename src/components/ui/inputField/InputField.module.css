@@ -1,6 +1,7 @@
 .inputsDiscount {
     width: 100%;
     padding: 16px 32px;
+    font-size: 20px;
     border-radius: 6px;
     border: 1px solid #FFF;
     background-color: rgba(0, 0, 0, 0);
@@ -27,4 +28,10 @@
     font-weight: 500;
     line-height: 130%;
     margin-bottom: 16px;
+}
+@media (max-width: 500px) {
+    .inputsDiscount {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
 }

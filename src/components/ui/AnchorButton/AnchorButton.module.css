@@ -13,3 +13,9 @@
     font-weight: 600;
     line-height: 130%;
 }
+@media (max-width: 480px) {
+    .btnCheckOut {
+        padding: 12px 52px;
+        font-size: 18px;
+    }
+}

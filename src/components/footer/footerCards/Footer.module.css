@@ -51,3 +51,10 @@
         font-size: 28px;
     }
 }
+@media (max-width: 360px) {
+   
+    .container {
+     justify-content: center;
+    }
+    
+}

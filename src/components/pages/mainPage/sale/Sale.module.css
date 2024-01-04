@@ -21,3 +21,41 @@
     border-left: none;
     border-right: none;
 }
+@media (max-width: 768px) {
+    .saleTitle h2{
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 581px) {
+    .saleTitle h2 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 475px) {
+    .saleContainer{
+        position: relative;
+    }
+
+    .saleLinkButtonContainer {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .saleTitle hr {
+        display: none;
+    }
+
+    .saleTitle h2  {
+        margin: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .saleTitle h2 {
+        font-size: 40px;
+    }
+}

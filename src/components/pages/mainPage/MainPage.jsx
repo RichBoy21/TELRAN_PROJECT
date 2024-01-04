@@ -19,7 +19,7 @@ function MainPage() {
   useEffect(() => {
     dispatch(getCategoriesAll());
   }, [dispatch]);
- 
+
   return (
     <div className={styles.mainPageContainer}>
       <div className={styles.mainGardenProducts}>
@@ -39,11 +39,13 @@ function MainPage() {
         <div className={styles.categoriesTitle}>
           <h2>Categories</h2>
           <hr />
-          <LinkButton
-            path={"/categories"}
-            title={"All categories"}
-            className={"mainLinkButton"}
-          />
+          <div className={styles.mainLinkButtonContainer}>
+            <LinkButton
+              path={"/categories"}
+              title={"All categories"}
+              className={"mainLinkButton"}
+            />
+          </div>
         </div>
         <CategoriesItem categories={categoriesAll} status={status} error={error} />
       </div>

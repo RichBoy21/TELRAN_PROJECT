@@ -1,9 +1,73 @@
 .discountForm {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 450px;
     gap: 16px;
     margin-top: 32px;
 }
 
+@media (max-width: 990px) {
+    .discountForm {
+        width: 394px;
+    }
+}
+@media (max-width: 930px) {
+    .discountForm {
+        width: 344px;
+    }
+}
+@media (max-width: 890px) {
+    .discountForm {
+        width: 320px;
+    }
+}
+@media (max-width: 850px) {
+    .discountForm {
+        width: 300px;
+    }
+}
+@media (max-width: 768px) {
+    .discountForm {
+        width: 294px;
+    }
+}
 
+@media (max-width: 700px) {
+    .discountForm {
+        width: 500px;
+    }
+}
+
+@media (max-width: 615px) {
+    .discountForm {
+        width: 450px;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .discountForm {
+        width: 400px;
+    }
+}
+@media (max-width: 500px) {
+    .discountForm {
+        width: 350px;
+        margin-top: 0px;
+    }
+}
+@media (max-width: 450px) {
+    .discountForm {
+        width: 290px;
+    }
+}
+@media (max-width: 390px) {
+    .discountForm {
+        width: 230px;
+    }
+}
+@media (max-width: 330px) {
+    .discountForm {
+        width: 215px;
+    }
+}
