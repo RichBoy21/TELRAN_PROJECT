@@ -5,7 +5,8 @@
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(259px, 1fr));
+    justify-items: center;
     gap: 16px;
     margin-bottom: 80px;
 }
@@ -59,4 +60,24 @@
     border-left: none;
     border-right: none;
 }
-
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 56px;
+    }
+    
+}
+@media (max-width: 480px) {
+    .container h2 {
+        font-size: 48px;
+        margin-top: 32px;
+    }
+    .productsBtns {
+       display: none;
+    }
+}
+@media (max-width: 360px) {
+    .container h2 {
+        font-size: 40px;
+    }
+    
+}

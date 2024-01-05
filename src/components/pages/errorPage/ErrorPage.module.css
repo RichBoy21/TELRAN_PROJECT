@@ -33,3 +33,77 @@
     display: flex;
     justify-content: center;
 }
+@media (max-width: 768px) {
+    .errorImg {
+        width: 648px;
+    }
+    .errorTitle {
+        font-size: 56px;
+    }
+}
+@media (max-width: 690px) {
+    .errorImg {
+        width: 550px;
+    }
+    .errorTitle {
+        font-size: 50px;
+    }
+}
+@media (max-width: 590px) {
+    .errorImg {
+        width: 450px;
+    }
+    .errorTitle {
+        font-size: 48px;
+    }
+    .errorText {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    .errorImg {
+        width: 440px;
+    }
+    .errorTitle {
+        font-size: 48px;
+    }
+}
+@media (max-width: 480px) {
+    .errorImg {
+        width: 370px;
+    }
+    .errorTitle {
+        font-size: 44px;
+        margin: 0px 20px 32px;
+    }
+}
+@media (max-width: 410px) {
+    .errorImg {
+        width: 330px;
+    }
+    .errorTitle {
+        font-size: 42px;
+    }
+}
+@media (max-width: 360px) {
+    .errorImg {
+        width: 270px;
+    }
+    .errorTitle {
+        font-size: 38px;
+    }
+    .errorText {
+        font-size: 16px;
+    }
+}
+@media (max-width: 280px) {
+    .errorImg {
+        width: 240px;
+    }
+    .errorTitle {
+        font-size: 36px;
+    }
+    .errorText {
+        font-size: 14px;
+    }
+}
