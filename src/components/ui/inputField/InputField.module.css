@@ -5,6 +5,7 @@
     border-radius: 6px;
     border: 1px solid #FFF;
     background-color: rgba(0, 0, 0, 0);
+    color: #FFF;
 }
 
 .inputsDiscount::placeholder {
@@ -21,7 +22,7 @@
     border-radius: 6px;
     border: 1px solid #DDD;
     background: #FFF;
-    color: var(--txt-grey, #8B8B8B);
+    color:  #8B8B8B;
     font-family: 'Montserrat',sans-serif;
     font-size: 20px;
     font-style: normal;

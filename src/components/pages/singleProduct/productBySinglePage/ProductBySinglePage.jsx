@@ -19,7 +19,7 @@ const ProductBySinglePage = () => {
     const { productsAll } = useSelector((state) => state.products);
     console.log(productsAll)
     const currentProductFromProductAll = productsAll.find((p) => p.id === Number(id));
-  
+
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
     const { basketItems } = useSelector(state => state.basket)
     const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
@@ -32,24 +32,24 @@ const ProductBySinglePage = () => {
                 setIsButtonClicked(true);
             }
         })
-   
+
     }, [basketItems])
 
     useEffect(() => {
         dispatch(getProducts(id));
-        
+
     }, [dispatch, id]);
 
     useEffect(() => {
-       
+
         const currentProductFromBascketItems = basketItems.find((basketItem) => basketItem.product.id === currentProductFromProductAll)
-        
+
         if (currentProductFromBascketItems) {
-            
+
             const { counter } = currentProductFromBascketItems
             setCount(counter)
         }
-      
+
     }, []);
 
     const handleAddItem = (item) => {
@@ -78,8 +78,8 @@ const ProductBySinglePage = () => {
                         />
                     </div>
 
-                    <div>
-                        <p className={styles.productInfo}>{currentProductFromProductAll.title}</p>
+                    <div className={styles.singleProductInfo}>
+                        <p className={styles.productInfo} id={styles.toggle}>{currentProductFromProductAll.title}</p>
                         <div className={styles.singlePrice}>
                             {currentProductFromProductAll.discont_price
                                 ? <RenderSingleProductDiscountCard product={currentProductFromProductAll} styles={styles} />
@@ -99,9 +99,10 @@ const ProductBySinglePage = () => {
                                 title={isButtonClicked ? 'Added' : 'Add to cart'}
                                 className={isButtonClicked ? 'added' : 'addBtn'} />
                         </div>
-
-                        <h3>Description</h3>
-                        <p>{currentProductFromProductAll.description}</p>
+                        <div className={styles.singleDiscription}>
+                            <h3>Description</h3>
+                            <p>{currentProductFromProductAll.description}</p>
+                        </div>
                     </div>
                 </div>
             )}

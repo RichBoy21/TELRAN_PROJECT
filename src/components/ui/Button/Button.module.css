@@ -176,8 +176,21 @@
 }
 
 @media (max-width: 400px) {
+    .added_two {
+        max-width: 190px;
+    }
 
     .addBtn_two {
-     max-width: 190px;
+        max-width: 190px;
+    }
+}
+
+@media (max-width: 690px) {
+    .added {
+        max-width: 220px;
+    }
+
+    .addBtn {
+        max-width: 220px;
     }
 }
