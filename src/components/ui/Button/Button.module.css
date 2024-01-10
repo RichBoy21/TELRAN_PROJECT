@@ -100,46 +100,55 @@
     width: 100%;
     margin-top: 32px;
 }
+
 @media (max-width: 990px) {
     .discountBtn {
         width: 394px;
     }
 }
+
 @media (max-width: 930px) {
     .discountBtn {
         width: 344px;
     }
 }
+
 @media (max-width: 890px) {
     .discountBtn {
         width: 320px;
     }
 }
+
 @media (max-width: 850px) {
     .discountBtn {
         width: 300px;
     }
 }
+
 @media (max-width: 768px) {
     .discountBtn {
         width: 294px;
     }
 }
+
 @media (max-width: 700px) {
     .discountBtn {
         width: 500px;
     }
 }
+
 @media (max-width: 615px) {
     .discountBtn {
         width: 450px;
     }
 }
+
 @media (max-width: 560px) {
     .discountBtn {
         width: 400px;
     }
 }
+
 @media (max-width: 500px) {
     .discountBtn {
         width: 350px;
@@ -147,18 +156,28 @@
         padding: 12px 20px;
     }
 }
+
 @media (max-width: 450px) {
     .discountBtn {
         width: 290px;
     }
 }
+
 @media (max-width: 390px) {
     .discountBtn {
         width: 230px;
     }
 }
+
 @media (max-width: 330px) {
     .discountBtn {
         width: 215px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .addBtn_two {
+     max-width: 190px;
     }
 }

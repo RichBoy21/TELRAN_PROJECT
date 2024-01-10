@@ -12,3 +12,8 @@
     border-left: none;
     border-right: none;
 }
+@media (max-width: 480px) {
+    .productsBtns {
+       display: none;
+    }
+}

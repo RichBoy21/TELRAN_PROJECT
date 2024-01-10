@@ -5,8 +5,9 @@
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(259px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(254px, 1fr));
     justify-items: center;
+    justify-content: center;
     gap: 16px;
     margin-bottom: 80px;
 }
@@ -74,10 +75,30 @@
     .productsBtns {
        display: none;
     }
+    .cardContainer img {
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (max-width: 360px) {
     .container h2 {
         font-size: 40px;
+    }
+    
+}
+@media (max-width: 320px) {
+    .cardContainer img {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 290px) {
+    .cardContainer img {
+        width: 150px;
+        height: 150px;
+    }
+    .cards {
+        justify-content: space-around;
     }
     
 }

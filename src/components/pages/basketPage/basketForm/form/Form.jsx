@@ -13,7 +13,6 @@ const Form = () => {
     const dispatch = useDispatch()
     const { basketItems } = useSelector(state => state.basket)
     const status = useSelector(selectedBasketStatus)
-    console.log(status)
     const [modalActive, setModalActive] = useState(false)
 
     const {

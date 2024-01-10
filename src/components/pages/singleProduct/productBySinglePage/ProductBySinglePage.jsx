@@ -17,33 +17,39 @@ const ProductBySinglePage = () => {
     const dispatch = useDispatch();
 
     const { productsAll } = useSelector((state) => state.products);
+    console.log(productsAll)
     const currentProductFromProductAll = productsAll.find((p) => p.id === Number(id));
+  
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
     const { basketItems } = useSelector(state => state.basket)
-
     const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
-
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-
+    console.log(basketItems)
     useEffect(() => {
         basketItems.forEach((basketItem) => {
             if (basketItem.product.id === Number(id)) {
                 setIsButtonClicked(true);
             }
         })
+   
     }, [basketItems])
 
     useEffect(() => {
         dispatch(getProducts(id));
+        
     }, [dispatch, id]);
 
     useEffect(() => {
-        const currentProductFromBascketItems = basketItems.find((basketItem) => basketItem.product.id === currentProductFromProductAll.id)
+       
+        const currentProductFromBascketItems = basketItems.find((basketItem) => basketItem.product.id === currentProductFromProductAll)
+        
         if (currentProductFromBascketItems) {
+            
             const { counter } = currentProductFromBascketItems
             setCount(counter)
         }
+      
     }, []);
 
     const handleAddItem = (item) => {

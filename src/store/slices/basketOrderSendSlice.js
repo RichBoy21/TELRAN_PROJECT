@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
+
 
 export const sendOrderData = createAsyncThunk(
   "basket/sendOrderData",

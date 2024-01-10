@@ -60,7 +60,10 @@ const StyledSelect = styled(Select)`
     line-height: 126%;
     outline: none;
 
- 
+    @media (max-width: 400px) {
+
+      width: 160px;
+  }
 
     .css-1dimb5e-singleValue {
       padding-left: 16px;

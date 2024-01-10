@@ -2,6 +2,8 @@
     display: flex;
     margin-bottom: 40px;
     padding: 0px 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .labelPrice {
@@ -23,9 +25,15 @@
     margin-right: 16px;
     padding-bottom: 10px;
 }
-
+.priceFromToBox{
+    display: flex;
+}
+.discountCheckboxBox{
+    display: flex;
+}
 .inputsFrom {
-    width: 112px;
+    max-height: 36px;
+    max-width: 112px;
     padding: 8px 16px;
     margin-right: 16px;
     border-radius: 6px;
@@ -34,7 +42,8 @@
 }
 
 .inputsTo {
-    width: 112px;
+    max-height: 36px;
+    max-width: 112px;
     padding: 8px 16px;
     margin-right: 40px;
     border-radius: 6px;
@@ -82,7 +91,22 @@
     
 }
 
-
+@media (max-width: 400px) {
+    .labelPrice {
+        font-size: 16px;
+    }
+    .labelSelect {
+        font-size: 16px;
+    }
+    .inputsFrom {
+      max-width: 80px;
+    }
+    
+    .inputsTo {
+      max-width: 80px;
+      margin-right: 10px;
+    }
+}
 
 
 

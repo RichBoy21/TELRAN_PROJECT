@@ -5,7 +5,7 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
 
     return (
         <div className={styles.filterInputsBox}>
-            <div>
+            <div className={styles.priceFromToBox}>
                 <label className={styles.labelPrice}>Price</label>
                 <input
                     value={from}
@@ -21,7 +21,7 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
                 ></input>
             </div>
             {!isDiscountPage && (
-                <>
+                <div className={styles.discountCheckboxBox}>
                     <label className={styles.labelPrice}>Discounted items</label>
                     <input
                         type="checkbox"
@@ -29,7 +29,7 @@ const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, fr
                         onChange={handleDiscountChange}
                         className={styles.inputCheckbox}
                     />
-                </>
+                </div>
             )}
             <div className={styles.selectContainer}>
                 <SelectFilter selectedOption={selectedOption} handleSelectChange={handleSelectChange} />

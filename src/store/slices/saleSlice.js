@@ -10,6 +10,7 @@ export const submitSalesData = createAsyncThunk(
           "Content-Type": "application/json",
         },
         body: JSON.stringify(saleData),
+       
       });
       if (!response.ok) {
         throw new Error("Server responded with an error!");
