@@ -1,7 +1,7 @@
 import SelectFilter from '../selectFilter/SelectFilter';
 import styles from './Filters.module.css'
 
-const Filters = ({isDiscountPage, handlePriceFromChange, handlePriceToChange, from, to, isDiscounted, handleDiscountChange, selectedOption, handleSelectChange }) => {
+const Filters = ({ isDiscountPage, handlePriceFromChange, handlePriceToChange, from, to, isDiscounted, handleDiscountChange, selectedOption, handleSelectChange }) => {
 
     return (
         <div className={styles.filterInputsBox}>

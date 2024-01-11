@@ -5,7 +5,7 @@ import styles from './ProductBySinglePage.module.css';
 import { getProducts } from '../../../../store/slices/productsSlice';
 import LinkButton from '../../../ui/LinkButton/LinkButton';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
-import { useCounter } from '../../../../hook/useCounter'
+import { useCounter } from '../../../../hooks/useCounter'
 import Button from '../../../ui/Button/Button';
 import { RenderSingleProductDiscountCard } from './renderSingleProduct/RenderSingleProductDiscountCard';
 import { RenderSingleProductCard } from './renderSingleProduct/RenderSingleProductCard';
@@ -37,19 +37,14 @@ const ProductBySinglePage = () => {
 
     useEffect(() => {
         dispatch(getProducts(id));
-
     }, [dispatch, id]);
 
     useEffect(() => {
-
         const currentProductFromBascketItems = basketItems.find((basketItem) => basketItem.product.id === currentProductFromProductAll)
-
         if (currentProductFromBascketItems) {
-
             const { counter } = currentProductFromBascketItems
             setCount(counter)
         }
-
     }, []);
 
     const handleAddItem = (item) => {

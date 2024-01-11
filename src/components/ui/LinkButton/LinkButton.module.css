@@ -83,6 +83,7 @@
     cursor: pointer;
     white-space: nowrap;
 }
+
 .emptyBtn {
     display: flex;
     padding: 16px 32px;
@@ -116,13 +117,46 @@
         font-size: 14px;
     }
 }
+
 @media (max-width: 480px) {
     .errorLinkBtn {
         padding: 12px 52px;
     }
 }
+
 @media (max-width: 550px) {
     .basketLinkButton {
-       display: none;
+        display: none;
+    }
+}
+
+@media (max-width: 578px) {
+
+    .emptyBtn {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 578px) {
+
+    .emptyBtn {
+        padding: 12px 26px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 411px) {
+
+    .emptyBtn {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .emptyBtn {
+        width: 100%;
     }
 }

@@ -2,7 +2,6 @@
     padding: 0px 40px;
 }
 
-
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(254px, 1fr));
@@ -65,6 +64,11 @@
         font-size: 56px;
     }
     
+}
+@media (max-width: 603px) {
+    .cards {
+        justify-items: center;
+    }
 }
 @media (max-width: 480px) {
     .container h2 {

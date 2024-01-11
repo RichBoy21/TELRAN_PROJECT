@@ -1,4 +1,5 @@
 export const RenderProductsCards = ({ product, styles }) => (
+
     <div key={product.id}>
         <div className={styles.productsCardsContainer}>
             <div className={styles.productDiscount}>
@@ -13,4 +14,5 @@ export const RenderProductsCards = ({ product, styles }) => (
             </div>
         </div>
     </div>
+    
 );

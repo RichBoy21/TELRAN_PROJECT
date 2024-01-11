@@ -10,8 +10,6 @@ const BasketForm = () => {
     const { basketItems } = useSelector(state => state.basket)
     const { status,error } = useSelector((state) => state.basket)
     
-
-
     const totalUniqueProducts = basketItems.length;
 
     return (

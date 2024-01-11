@@ -1,4 +1,4 @@
-export const RenderBasketDiscountCart  = ({ product, styles, increment, decrement, plus, minus, counter, clouse, handleRemoveItem }) => (
+export const RenderBasketDiscountCart = ({ product, styles, increment, decrement, plus, minus, counter, clouse, handleRemoveItem }) => (
     <div className={styles.productsCardsContainer}>
 
         <img src={`http://localhost:3333${product.image}`} alt={product.title} className={styles.productImg} />

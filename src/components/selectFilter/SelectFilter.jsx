@@ -48,8 +48,7 @@ const StyledSelectContainer = styled.div`
   `;
 
 const StyledSelect = styled(Select)`
-   
-   
+
     width: 200px;
     height: 48px;
     color: #8B8B8B;

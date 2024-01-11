@@ -3,7 +3,6 @@ import styles from "./Sale.module.css";
 import SaleItem from "./saleItem/SaleItem";
 
 const Sale = () => {
-
   return (
     <div className={styles.saleContainer}>
       <div className={styles.saleTitle}>

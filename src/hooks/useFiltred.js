@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 export const useFiltred = (items) => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -61,8 +60,6 @@ export const useFiltred = (items) => {
   const handleSelectChange = (selectedOption) => {
     setSelectedOption(selectedOption.value);
   };
-
- 
 
   return {
     getFiltredItems,

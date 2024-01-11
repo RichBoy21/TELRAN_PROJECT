@@ -5,11 +5,11 @@ import FooterMap from "./footerMap/FooterMap";
 
 function Footer() {
   return (
-    <div>
+    <footer>
       <h2 className={styles.footerTitle}>Contact</h2>
       <FooterCards />
       <FooterMap />
-    </div>
+    </footer>
   );
 }
 export default Footer;

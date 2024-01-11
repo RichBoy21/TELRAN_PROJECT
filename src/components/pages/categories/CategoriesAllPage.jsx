@@ -19,17 +19,12 @@ const CategoriesAllPage = () => {
  
 
   return (
-    <>
-
-
+    <main>
       <div className={styles.productsBtns}>
         <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} onCl/>
         <hr />
         <LinkButton path={"/categories"} title={'Categories'} className={'historyBtn'} />
       </div>
-
-
-
       <div className={styles.container}>
         {error && <h2>Error: {error}</h2>}
         {status === "loading" && <h2>Loading....</h2>}
@@ -45,7 +40,7 @@ const CategoriesAllPage = () => {
           ))}
         </div>
       </div>
-    </>
+    </main>
   );
 
 };

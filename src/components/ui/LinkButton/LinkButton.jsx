@@ -1,5 +1,5 @@
 import styles from "./LinkButton.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function LinkButton({ path, title, className }) {
   return (

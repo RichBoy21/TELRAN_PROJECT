@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-
 export const sendOrderData = createAsyncThunk(
   "basket/sendOrderData",
   async (basketData, { rejectWithValue }) => {

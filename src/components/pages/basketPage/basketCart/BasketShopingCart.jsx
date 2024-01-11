@@ -21,7 +21,7 @@ const BasketShopingCart = () => {
     }
 
     return (
-        <div className={styles.containerBasket}>
+        <section className={styles.containerBasket}>
             <div className={styles.cardContainerBasket}>
                 {basketItems.map((basketItem) => {
                     const { product, counter } = basketItem;
@@ -54,7 +54,7 @@ const BasketShopingCart = () => {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -30,7 +30,7 @@ const Form = () => {
             setModalActive(true);
 
             timeoutId = setTimeout(() => {
-             setActive()
+                setActive()
             }, 3000);
         }
         return () => { clearTimeout(timeoutId) }

@@ -3,11 +3,11 @@ import styles from './SalesItemPage.module.css';
 import { useEffect } from 'react';
 import { getProducts } from '../../../../store/slices/productsSlice';
 import { Link } from 'react-router-dom';
-import { useFiltred } from '../../../../hook/useFiltred';
+import { useFiltred } from '../../../../hooks/useFiltred';
 import Filters from '../../../filter/Filters';
 import { RenderProductsDiscountCards } from '../../mainPage/sale/saleItem/RenderSaleItem';
 import Button from '../../../ui/Button/Button';
-import { useCounter } from '../../../../hook/useCounter';
+import { useCounter } from '../../../../hooks/useCounter';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
 
 const SalesItemPage = () => {

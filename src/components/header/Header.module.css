@@ -11,7 +11,6 @@
     gap: 32px;
 }
 
-
 .link {
     text-decoration: none;
     color: #282828;
@@ -50,9 +49,6 @@
     display: none;
 }
 
-
-
-
 @media (max-width: 1000px) {
     .header {
         padding: 30px 20px;
@@ -76,24 +72,20 @@
         align-items: stretch;
         justify-content: space-evenly;
     }
-
     .imgBasketLogo {
         width: 32px;
         height: 32px;
     }
-
     .counterHeader {
         right: 15px;
         top: 0px;
         width: 20px;
         height: 20px;
     }
-
     .menuToggle {
         display: block;
         order: 2;
     }
-
     .navBar {
         display: none;
         flex-direction: column;
@@ -115,22 +107,18 @@
         border-radius: 12px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-
     .navBar.show {
-        display: flex;   
+        display: flex;
         left: 0;
         width: 85%;
-      }
-
+    }
     .navBar a {
         text-align: center;
         padding: 10px;
     }
-
     .link {
         font-size: 24px;
     }
-
     .closeButton {
         display: block;
         position: absolute;

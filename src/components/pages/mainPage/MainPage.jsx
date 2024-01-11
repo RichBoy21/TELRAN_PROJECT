@@ -21,7 +21,7 @@ function MainPage() {
   }, [dispatch]);
 
   return (
-    <div className={styles.mainPageContainer}>
+    <main className={styles.mainPageContainer}>
       <div className={styles.mainGardenProducts}>
         <div className={styles.guideContent}>
           <h1>
@@ -53,7 +53,7 @@ function MainPage() {
         <DiscountSection />
       </div>
       <Sale />
-    </div>
+    </main>
   );
 }
 

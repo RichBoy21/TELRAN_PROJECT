@@ -1,12 +1,11 @@
-import styles from './SingleProductPage.module.css'
 import ProductBySinglePage from './productBySinglePage/ProductBySinglePage';
 
 const SingleProductPage = () => {
 
     return (
-        <>
+        <main>
             <ProductBySinglePage />
-        </>
+        </main>
     );
 };
 

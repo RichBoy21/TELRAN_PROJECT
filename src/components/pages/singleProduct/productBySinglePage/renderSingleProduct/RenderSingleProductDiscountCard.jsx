@@ -1,5 +1,3 @@
-
-
 export const RenderSingleProductDiscountCard = ({ product, styles }) => {
 
     return (

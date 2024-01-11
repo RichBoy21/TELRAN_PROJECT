@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 function CategoriesItem({ categories, status, error }) {
 
   return (
-    <div className={styles.CategoriesItemContainer}>
+    <section className={styles.CategoriesItemContainer}>
       {error && <h2>Error ....</h2>}
       {status === "loading" && <h2>loading ....</h2>}
-
       {categories?.map((category) => (
         <Link to={`/categories/${category.id}`} key={category.id} className={styles.links}>
           <div className={styles.categoriesCard}>
@@ -20,7 +19,7 @@ function CategoriesItem({ categories, status, error }) {
           </div>
         </Link>
       ))}
-    </div>
+    </section>
   );
 }
 export default CategoriesItem;

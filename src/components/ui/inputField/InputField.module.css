@@ -22,23 +22,25 @@
     border-radius: 6px;
     border: 1px solid #DDD;
     background: #FFF;
-    color:  #8B8B8B;
-    font-family: 'Montserrat',sans-serif;
+    color: #8B8B8B;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
     margin-bottom: 16px;
 }
+
 @media (max-width: 500px) {
     .inputsDiscount {
         font-size: 18px;
         padding: 12px 20px;
     }
 }
+
 @media (max-width: 1140px) {
     .inputsBasket {
-       width: 100%;
-       padding: 12px 32px;
+        width: 100%;
+        padding: 12px 32px;
     }
 }

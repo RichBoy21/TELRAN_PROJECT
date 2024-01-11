@@ -55,7 +55,7 @@ const categoriesSlice = createSlice({
         state.statusProductsByCategoryId = "loading";
       })
       .addCase(getProductsByCategoryId.fulfilled, (state, action) => {
-        state.statusProductsByCategoryId= "fulfilled";
+        state.statusProductsByCategoryId = "fulfilled";
         state.productsByCategoryId = action.payload;
       })
       .addCase(getProductsByCategoryId.rejected, (state, action) => {

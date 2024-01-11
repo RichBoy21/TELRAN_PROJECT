@@ -121,37 +121,42 @@
     border-radius: 12px 12px 0 0;
 }
 
-.productLink{
+.productLink {
     text-decoration: none;
 }
 
-.btnCards{
+.btnCards {
     z-index: 1;
     position: absolute;
     margin: 230px 16px 16px;
 }
+
 @media (max-width: 768px) {
     .allProducts {
         font-size: 56px;
     }
-    
+
 }
+
 @media (max-width: 480px) {
     .allProducts {
         font-size: 48px;
         margin-top: 32px;
     }
 }
+
 @media (max-width: 400px) {
     .productsCardsContainer {
         max-width: 220px;
     }
+
     .productsContainer {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         justify-content: center;
     }
-    
+
 }
+
 @media (max-width: 360px) {
     .allProducts {
         font-size: 40px;

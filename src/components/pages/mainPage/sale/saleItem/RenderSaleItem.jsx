@@ -9,7 +9,7 @@ export const RenderProductsDiscountCards = ({product, styles}) => {
         );
 
         return (
-            <div key={product.id}>
+            <section key={product.id}>
                 <div className={styles.productsCardsContainer}>
                     <div className={styles.productDiscount}>
                         <p>-{percentDiscount}%</p>
@@ -25,7 +25,7 @@ export const RenderProductsDiscountCards = ({product, styles}) => {
                         <p className={styles.productPrice}>{`${"$"}${product.price}`}</p>
                     </div>
                 </div>
-            </div>
+            </section>
         );
     }
 };

@@ -7,5 +7,5 @@ export const useCounter = () => {
   const decrementCartCount = () => cartCount > 0 && setCartCount(cartCount - 1);
   const setCount = (value) => setCartCount(value);
 
-  return { cartCount, incrementCartCount, decrementCartCount,setCount };
+  return { cartCount, incrementCartCount, decrementCartCount, setCount };
 };

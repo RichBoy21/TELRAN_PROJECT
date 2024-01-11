@@ -3,15 +3,13 @@ import styles from './Products.module.css'
 import { useEffect } from 'react';
 import { getProducts } from '../../../../store/slices/productsSlice';
 import { Link } from 'react-router-dom';
-import { useFiltred } from './../../../../hook/useFiltred'
+import { useFiltred } from './../../../../hooks/useFiltred'
 import Filters from '../../../filter/Filters';
 import { RenderProductsCards } from './renderProductItem/RenderProductsCards';
 import { RenderProductsDiscountCards } from './renderProductItem/RenderProductsDiscountCards';
 import Button from '../../../ui/Button/Button';
-import { useCounter } from '../../../../hook/useCounter';
+import { useCounter } from '../../../../hooks/useCounter';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
-
-
 
 
 const ProductsItem = () => {
@@ -21,7 +19,6 @@ const ProductsItem = () => {
     const { cartCount } = useCounter();
     const { basketItems } = useSelector(state => state.basket)
 
-
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);
@@ -29,8 +26,6 @@ const ProductsItem = () => {
     const handleAddItem = (item) => {
         dispatch(addItem(item));
     };
-
-
 
     return <article>
         <h2 className={styles.allProducts}>All products</h2>
@@ -52,17 +47,16 @@ const ProductsItem = () => {
                     const isDisabled = basketItems.find(basketItem => basketItem.product.id === product.id)
 
                     return (
-
                         <div key={product.id}>
-                           <div className={styles.btnCards}>
-                                    <Button onClick={() => handleAddItem({
-                                        product: product,
-                                        counter: cartCount
-                                    })}
-                                        disabled={isDisabled}
-                                        title={isDisabled ? 'Added' : 'Add to cart'}
-                                        className={isDisabled ? 'added_two' : 'addBtn_two'} />
-                                </div>
+                            <div className={styles.btnCards}>
+                                <Button onClick={() => handleAddItem({
+                                    product: product,
+                                    counter: cartCount
+                                })}
+                                    disabled={isDisabled}
+                                    title={isDisabled ? 'Added' : 'Add to cart'}
+                                    className={isDisabled ? 'added_two' : 'addBtn_two'} />
+                            </div>
                             <Link className={styles.productLink} to={`/products/${product.id}`}>
                                 {product.discont_price
                                     ? <RenderProductsDiscountCards product={product} styles={styles} />
@@ -71,7 +65,6 @@ const ProductsItem = () => {
                         </div>)
                 })}
         </div>
-
     </article >
 }
 

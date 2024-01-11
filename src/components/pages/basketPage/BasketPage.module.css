@@ -37,39 +37,45 @@
     display: flex;
     gap: 32px;
 }
+
 @media (max-width: 1140px) {
-  
-.formCardsContainer {
-  flex-wrap: wrap;
+
+    .formCardsContainer {
+        flex-wrap: wrap;
+    }
+
 }
-    
-}
+
 @media (max-width: 768px) {
     .shoppingCart {
         font-size: 56px;
     }
-    
+
 }
+
 @media (max-width: 690px) {
     .basketTitleBtn h2 {
-        white-space:normal;
+        white-space: normal;
     }
-    
+
 }
+
 @media (max-width: 550px) {
     .basketTitleBtn hr {
-       display: none;
+        display: none;
     }
 }
+
 @media (max-width: 480px) {
     .shoppingCart {
         font-size: 48px;
     }
-    
+
 }
+
 @media (max-width: 360px) {
     .shoppingCart {
         font-size: 40px;
     }
-    
+
 }

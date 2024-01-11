@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import styles from "./ProductsByCategoriesIdPage.module.css";
 import { getCategoriesAll, getProductsByCategoryId } from "../../../../store/slices/categoriesSlice";
 import LinkButton from "../../../ui/LinkButton/LinkButton";
-import { useFiltred } from "../../../../hook/useFiltred";
+import { useFiltred } from "../../../../hooks/useFiltred";
 import Filters from "../../../filter/Filters";
 import { RenderProductsCards } from "./renderCards/RenderProductsCards";
 import { RenderProductsDiscountCards } from "./renderCards/RenderProductsDiscountCards";
 import { addItem } from "../../../../store/slices/basketOrderSendSlice";
 import Button from "../../../ui/Button/Button";
-import { useCounter } from "../../../../hook/useCounter";
+import { useCounter } from "../../../../hooks/useCounter";
 
 
 const ProductsByCategoryId = () => {
@@ -32,7 +32,7 @@ const ProductsByCategoryId = () => {
   };
 
   return (
-    <>
+    <section>
       <div className={styles.productsBtns}>
         <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} />
         <hr />
@@ -80,7 +80,7 @@ const ProductsByCategoryId = () => {
             );
           })}
       </div>
-    </>
+    </section>
   );
 };
 

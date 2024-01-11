@@ -96,13 +96,14 @@
         gap: 0px;
         overflow: hidden;
         height: 640px;
-        border-radius: 12px; 
+        border-radius: 12px;
     }
 
     .discountImg {
         position: unset;
     }
 }
+
 @media (max-width: 615px) {
     .dicsountContent {
         height: 600px;
@@ -113,54 +114,67 @@
         height: 250px;
     }
 }
+
 @media (max-width: 560px) {
     .dicsountContent {
         height: 550px;
     }
+
     .discountTitle {
         font-size: 44px;
     }
+
     .discountImg {
         width: 420px;
     }
 }
+
 @media (max-width: 500px) {
     .dicsountContent {
         height: 460px;
     }
+
     .discountTitle {
         font-size: 42px;
     }
+
     .discountImg {
         width: 330px;
     }
 }
+
 @media (max-width: 450px) {
     .dicsountContent {
         height: 460px;
-       
+
     }
+
     .discountImg {
         width: 330px;
     }
+
     .discountTitle {
         width: 105%;
         font-size: 40px;
     }
 }
+
 @media (max-width: 390px) {
     .dicsountContent {
         height: 420px;
-       
+
     }
+
     .discountImg {
         width: 250px;
     }
+
     .discountTitle {
         width: 105%;
         font-size: 40px;
     }
 }
+
 @media (max-width: 380px) {
     .discountTitle {
         width: 100%;
@@ -168,18 +182,22 @@
         padding-right: 40px;
     }
 }
+
 @media (max-width: 330px) {
     .dicsountContent {
         height: 395px;
-       
+
     }
+
     .discountImg {
         width: 200px;
     }
+
     .discountTitle {
         width: 100%;
         font-size: 28px;
     }
+
     .discountContainer {
         margin: 0px 20px;
     }

@@ -17,8 +17,6 @@
     border-radius: 12px;
 }
 
-
-
 h3 {
     color: #282828;
     font-family: 'Montserrat', sans-serif;
@@ -173,13 +171,6 @@ h3 {
 .singleProductInfo {
     max-width: 50%;
 }
-p {
-    color: #550a0a;
-}
-
-
-
-
 
 @media (max-width: 900px) {
     .singleProductContainer {
@@ -293,29 +284,33 @@ p {
         flex-direction: column;
         margin-bottom: 80px;
     }
-  
+
 }
+
 @media (max-width: 474px) {
 
     .singleDiscription {
-      width: 300px;
+        width: 300px;
     }
 }
+
 @media (max-width: 380px) {
 
     .singleDiscription {
-      width: 250px;
+        width: 250px;
     }
 }
+
 @media (max-width: 320px) {
 
     .singleDiscription {
-      width: 200px;
+        width: 200px;
     }
 }
+
 @media (max-width: 300px) {
 
     .singleDiscription {
-      width: 190px;
+        width: 190px;
     }
 }
