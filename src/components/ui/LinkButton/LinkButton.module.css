@@ -121,3 +121,8 @@
         padding: 12px 52px;
     }
 }
+@media (max-width: 550px) {
+    .basketLinkButton {
+       display: none;
+    }
+}

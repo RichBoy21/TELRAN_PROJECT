@@ -194,3 +194,20 @@
         max-width: 220px;
     }
 }
+@media (max-width: 1140px) {
+    .basketFormBtn {
+  width: 25%;
+    }
+}
+@media (max-width: 550px) {
+    .basketFormBtn {
+        width: 100%;
+          }
+    
+}
+@media (max-width: 480px) {
+    .basketFormBtn {
+        font-size: 18px;
+        padding: 12px 32px;
+    }
+}

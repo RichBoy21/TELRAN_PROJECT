@@ -36,3 +36,9 @@
         padding: 12px 20px;
     }
 }
+@media (max-width: 1140px) {
+    .inputsBasket {
+       width: 100%;
+       padding: 12px 32px;
+    }
+}

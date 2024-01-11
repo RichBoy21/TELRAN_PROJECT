@@ -63,3 +63,49 @@
     font-weight: 600;
     line-height: 110%;
 }
+@media (max-width: 1140px) {
+    .basketFormContainer {
+      width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .totalPrice {
+        font-size: 56px;
+    }
+    .items {
+        font-size: 32px;
+    }
+    .titleForm {
+        font-size: 32px;
+    }
+}
+@media (max-width: 480px) {
+    .totalPrice {
+        font-size: 48px;
+    }
+    .items {
+        font-size: 28px;
+    }
+    .titleForm {
+        font-size: 28px;
+    }
+}
+@media (max-width: 418px) {
+    .totalPrice {
+        font-size: 35px;
+    }
+    .items {
+        font-size: 28px;
+    }
+    .titleForm {
+        font-size: 28px;
+    }
+    .total {
+        font-size: 28px;
+    }
+}
+@media (max-width: 360px) {
+    .totalPrice {
+        font-size: 25px;
+    }
+}

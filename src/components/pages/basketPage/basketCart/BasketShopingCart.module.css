@@ -5,7 +5,7 @@
 }
 
 .containerBasket {
-    height: 582px;
+    max-height: 654px;
     overflow-y: scroll;
     width: 100%;
 }
@@ -32,11 +32,13 @@
     font-weight: 600;
     line-height: 130%;
     padding: 16px 44px;
+    width: 100px;
 }
+
 .counterPriceBox {
     display: flex;
     align-items: center;
-
+    flex-wrap: wrap;
 }
 
 .incrBasket {
@@ -49,7 +51,7 @@
     border-radius: 6px;
     border: 1px solid #DDD;
     padding: 17px;
-    cursor: zoom-in ;
+    cursor: zoom-in;
 }
 
 .decrBasket {
@@ -74,8 +76,7 @@
 }
 
 .productImg {
-    width: 200px;
-    height: 180px;
+    max-width: 200px;
     border-radius: 12px 0px 0px 12px;
 }
 
@@ -85,8 +86,11 @@
     cursor: pointer;
 }
 
-.productDiscount{
-    padding: 32px;
+.productDiscount {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 
@@ -121,4 +125,96 @@
     line-height: 110%;
     margin-right: 16px;
 }
+@media (max-width: 1270px) {
+    .IncrDecrCounterBasket {
+      margin-bottom: 10px;
+    }
+    
+    
+}
+@media (max-width: 1163px) {
+    .containerBasket {
+        max-height: 675px;
+    }
+    
+}
 
+@media (max-width: 1140px) {
+    .containerBasket {
+        max-height: 650px;
+    }
+    
+}
+@media (max-width: 688px) {
+    .productDiscount {
+       margin: 10px ;
+    }
+    
+}
+@media (max-width: 668px) {
+    .containerBasket {
+        max-height: 668px;
+    }
+    
+}
+@media (max-width: 594px) {
+    .containerBasket {
+        max-height: 674px;
+    }
+    
+}
+@media (max-width: 563px) {
+    .containerBasket {
+        max-height: 712px;
+    }
+    
+}
+@media (max-width: 550px) {
+    .containerBasket {
+        max-height: 1180px;
+       margin-bottom: 60px;
+       display: flex;
+       justify-content: center;
+    }
+    .productsCardsContainer {
+      flex-wrap: wrap;
+    }
+    .cardContainerBasket {
+        max-width: 372px;
+    }
+    .productImg {
+        max-width: 100%;
+        border-radius: 12px 12px 0px 0px;
+    }
+    
+}
+@media (max-width: 451px) {
+    .containerBasket {
+        max-height: 1170px;
+    
+    } 
+}
+@media (max-width: 446px) {
+    .containerBasket {
+        max-height: 1152px;
+    
+    } 
+}
+@media (max-width: 437px) {
+    .containerBasket {
+        max-height: 1134px;
+    
+    } 
+}
+@media (max-width: 427px) {
+    .containerBasket {
+        max-height: 1116px;
+    
+    } 
+}
+@media (max-width: 418px) {
+    .containerBasket {
+        max-height: 1098px;
+    
+    } 
+}
