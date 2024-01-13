@@ -4,12 +4,13 @@ import Footer from "../footer/Footer";
 import { FloatButton } from "antd";
 import styles from "./Layout.module.css";
 import ScrollToTop from "./../scrollToTop/ScrollToTop";
+import { Fragment } from "react";
 
 
 
 const Loyout = () => {
   return (
-    <>
+    <Fragment>
       <div className="App">
         <ScrollToTop />
         <Header />
@@ -19,7 +20,7 @@ const Loyout = () => {
         <Footer />
         <FloatButton.BackTop className={styles.btn} />
       </div >
-    </>
+    </Fragment>
   );
 };
 

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import InputField from '../../../../ui/inputField/InputField';
 import Button from '../../../../ui/Button/Button';
 import { inputFields } from '../../../../../utils/ formConfig';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Modal from '../../../../ui/Modal/Modal';
 import { selectedBasketStatus } from '../../../../../store/slices/basketOrderSendSlice'
 
@@ -55,7 +55,7 @@ const Form = () => {
     const totalUniqueProducts = basketItems.length;
 
     return (
-        <>
+        <Fragment>
             <Modal active={modalActive} setActive={setActive}>
                 <h3 className={styles.modalTitle}>Congratulations!</h3>
                 <p className={styles.modalText}>Your order has been successfully placed on the website.</p>
@@ -84,7 +84,7 @@ const Form = () => {
                 ))}
                 <Button className={"basketFormBtn"} title={"Order"} />
             </form>
-        </>
+        </Fragment>
     );
 }
 

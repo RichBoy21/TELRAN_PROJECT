@@ -1,10 +1,11 @@
 import styles from "./ErrorPage.module.css";
 import LinkButton from "../../ui/LinkButton/LinkButton";
 import error from "../../../assets/images/error.svg";
+import { Fragment } from "react";
 
 function ErrorPage() {
   return (
-    <main>
+    <Fragment>
       <div className={styles.errorContainer}>
         <img src={error} className={styles.errorImg} />
         <h2 className={styles.errorTitle}>Page Not Found</h2>
@@ -16,7 +17,7 @@ function ErrorPage() {
           <LinkButton path={"/"} title={"Go Home"} className={"errorLinkBtn"} />
         </span>
       </div>
-    </main>
+    </Fragment>
   );
 }
 

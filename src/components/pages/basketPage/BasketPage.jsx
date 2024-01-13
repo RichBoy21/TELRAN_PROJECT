@@ -4,7 +4,7 @@ import BasketForm from './basketForm/BasketForm';
 
 
 const BasketPage = () => {
-    return <main className={styles.basketContainer}>
+    return <div className={styles.basketContainer}>
         <div className={styles.basketTitleBtn}>
             <h2 className={styles.shoppingCart}>Shopping cart</h2>
             <hr />
@@ -13,7 +13,7 @@ const BasketPage = () => {
         <div className={styles.formCardsContainer}>
             <BasketForm />
         </div>
-    </main>;
+    </div>;
 }
 
 export default BasketPage;

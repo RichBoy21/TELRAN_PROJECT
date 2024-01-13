@@ -1,16 +1,16 @@
 import LinkButton from "../../ui/LinkButton/LinkButton";
 import ProductsItem from "./productsItem/ProductsItem";
 import styles from './Products.module.css'
-import FiltersContainer from "../../filter/Filters";
+import { Fragment } from "react";
 
 function Products() {
-  return <div>
+  return <Fragment>
     <div className={styles.productsBtns}>
       <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} />
       <hr />
       <LinkButton path={"/products"} title={'All products'} className={'historyBtn'} />
     </div>
     <ProductsItem />
-  </div>;
+  </Fragment>;
 }
 export default Products;

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./CategoriesAllPage.module.css";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { getCategoriesAll } from "../../../store/slices/categoriesSlice";
 import LinkButton from "../../ui/LinkButton/LinkButton";
 
@@ -19,7 +19,7 @@ const CategoriesAllPage = () => {
  
 
   return (
-    <main>
+    <Fragment>
       <div className={styles.productsBtns}>
         <LinkButton path={"/"} title={'Main page'} className={'historyBtn'} onCl/>
         <hr />
@@ -40,7 +40,7 @@ const CategoriesAllPage = () => {
           ))}
         </div>
       </div>
-    </main>
+    </Fragment>
   );
 
 };

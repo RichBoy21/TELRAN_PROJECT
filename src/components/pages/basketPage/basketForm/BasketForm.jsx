@@ -4,6 +4,7 @@ import empty from './../../../../assets/images/basket_empty.jpg'
 import LinkButton from '../../../ui/LinkButton/LinkButton';
 import BasketShopingCart from '../basketCart/BasketShopingCart';
 import Form from './form/Form';
+import { Fragment } from 'react';
 
 const BasketForm = () => {
     const dispatch = useDispatch()
@@ -13,7 +14,7 @@ const BasketForm = () => {
     const totalUniqueProducts = basketItems.length;
 
     return (
-        <>
+        <Fragment>
             {error && <h2>Error ....</h2>}
             {status === "loading" && <h2>Loading ....</h2>}
             {totalUniqueProducts > 0 ? (
@@ -30,7 +31,7 @@ const BasketForm = () => {
                     </div>
                 </div>
             )}
-        </>
+        </Fragment>
     );
 }
 

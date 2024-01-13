@@ -17,7 +17,7 @@ const ProductBySinglePage = () => {
     const dispatch = useDispatch();
 
     const { productsAll } = useSelector((state) => state.products);
-    console.log(productsAll)
+   
     const currentProductFromProductAll = productsAll.find((p) => p.id === Number(id));
 
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
@@ -25,7 +25,7 @@ const ProductBySinglePage = () => {
     const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-    console.log(basketItems)
+  
     useEffect(() => {
         basketItems.forEach((basketItem) => {
             if (basketItem.product.id === Number(id)) {

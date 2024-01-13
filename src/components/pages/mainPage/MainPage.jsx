@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./MainPage.module.css";
 import { getCategoriesAll } from "./../../../store/slices/categoriesSlice";
@@ -21,7 +21,7 @@ function MainPage() {
   }, [dispatch]);
 
   return (
-    <main className={styles.mainPageContainer}>
+    <div className={styles.mainPageContainer}>
       <div className={styles.mainGardenProducts}>
         <div className={styles.guideContent}>
           <h1>
@@ -53,7 +53,7 @@ function MainPage() {
         <DiscountSection />
       </div>
       <Sale />
-    </main>
+    </div>
   );
 }
 

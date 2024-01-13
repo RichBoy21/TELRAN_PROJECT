@@ -5,7 +5,7 @@ import { footerCards } from "./constants.js";
 
 function FooterCards() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       {footerCards.map((item) => {
         return (
           <div key={item.title} className={styles.card}>
@@ -25,7 +25,7 @@ function FooterCards() {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }
 export default FooterCards;
