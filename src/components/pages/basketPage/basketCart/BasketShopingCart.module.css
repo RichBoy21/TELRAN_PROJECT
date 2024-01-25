@@ -51,7 +51,7 @@
     border-radius: 6px;
     border: 1px solid #DDD;
     padding: 17px;
-    cursor: zoom-in;
+    cursor: pointer;
 }
 
 .decrBasket {
@@ -64,7 +64,7 @@
     border-radius: 6px;
     border: 1px solid #DDD;
     padding: 17px;
-    cursor: zoom-out;
+    cursor: pointer;
 }
 
 .titleClouseBox {

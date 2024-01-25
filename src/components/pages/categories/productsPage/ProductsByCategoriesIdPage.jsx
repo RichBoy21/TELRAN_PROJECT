@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 import styles from "./ProductsByCategoriesIdPage.module.css";
 import { getCategoriesAll, getProductsByCategoryId } from "../../../../store/slices/categoriesSlice";
@@ -19,7 +18,7 @@ const ProductsByCategoryId = () => {
   const dispatch = useDispatch();
   const { statusProductsByCategoryId, productsByCategoryId: { data, category }, error } = useSelector((state) => state.categories);
   const { getFiltredItems, from, to, handlePriceFromChange, handlePriceToChange, handleDiscountChange, handleSelectChange, isDiscounted, selectedOption } = useFiltred()
-  const { cartCount } = useCounter();
+  const { count } = useCounter();
   const { basketItems } = useSelector(state => state.basket)
 
   useEffect(() => {
@@ -64,7 +63,7 @@ const ProductsByCategoryId = () => {
                   <Button
                     onClick={() => handleAddItem({
                       product: product,
-                      counter: cartCount
+                      counter: count
                     })}
                     disabled={isDisabled}
                     title={isDisabled ? 'Added' : 'Add to cart'}

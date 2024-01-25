@@ -22,7 +22,7 @@ const ProductBySinglePage = () => {
 
     const { category } = useSelector((state) => state.categories.productsByCategoryId);
     const { basketItems } = useSelector(state => state.basket)
-    const { cartCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
+    const { count: productCount, incrementCartCount, decrementCartCount, setCount } = useCounter();
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   
@@ -84,12 +84,12 @@ const ProductBySinglePage = () => {
                         <div className={styles.singleCount}>
                             <div className={styles.IncrDecrCounter}>
                                 <button disabled={isButtonClicked} onClick={decrementCartCount} className={styles.decr}><img src={minus} /></button>
-                                <span className={styles.counter}>{cartCount}</span>
+                                <span className={styles.counter}>{productCount}</span>
                                 <button disabled={isButtonClicked} onClick={incrementCartCount} className={styles.incr}><img src={plus} /></button>
                             </div>
                             <Button disabled={isButtonClicked} onClick={() => handleAddItem({
                                 product: currentProductFromProductAll,
-                                counter: cartCount
+                                counter: productCount
                             })}
                                 title={isButtonClicked ? 'Added' : 'Add to cart'}
                                 className={isButtonClicked ? 'added' : 'addBtn'} />

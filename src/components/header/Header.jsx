@@ -7,6 +7,7 @@ import NavBar from "./navBar/NavBar";
 
 function Header() {
 
+ 
   return (
     <Fragment>
       <header className={styles.header}>

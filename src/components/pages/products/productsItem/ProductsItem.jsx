@@ -8,7 +8,6 @@ import Filters from '../../../filter/Filters';
 import { RenderProductsCards } from './renderProductItem/RenderProductsCards';
 import { RenderProductsDiscountCards } from './renderProductItem/RenderProductsDiscountCards';
 import Button from '../../../ui/Button/Button';
-import { useCounter } from '../../../../hooks/useCounter';
 import { addItem } from '../../../../store/slices/basketOrderSendSlice';
 
 
@@ -16,7 +15,6 @@ const ProductsItem = () => {
     const dispatch = useDispatch()
     const { status, error, productsAll } = useSelector((state) => state.products)
     const { getFiltredItems, from, to, handlePriceFromChange, handlePriceToChange, handleDiscountChange, handleSelectChange, isDiscounted, selectedOption } = useFiltred()
-    const { cartCount } = useCounter();
     const { basketItems } = useSelector(state => state.basket)
 
     useEffect(() => {
@@ -51,7 +49,7 @@ const ProductsItem = () => {
                             <div className={styles.btnCards}>
                                 <Button onClick={() => handleAddItem({
                                     product: product,
-                                    counter: cartCount
+                                    counter: 1
                                 })}
                                     disabled={isDisabled}
                                     title={isDisabled ? 'Added' : 'Add to cart'}
